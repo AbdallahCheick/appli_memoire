@@ -1,0 +1,22 @@
+
+Deprecated: The each() function is deprecated. This message will be suppressed on further calls in C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php on line 54
+
+Call Stack:
+    0.0023     744176   1. {main}() C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php:0
+    0.0036     755104   2. CodeFormatter->formatCode($source = '<?php\r\n\r\n$serverName = "localhost";\r\n$dBUsername = "root";\r\n$dBPassword = "";\r\n$dBName = "data_app";\r\n\r\n$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);\r\n\r\nif (!$conn)\r\n{\r\n    die("Connection failed: ". mysqli_connect_error());\r\n}\r\n\r\n\r\n') C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php:1736
+    0.0038     755424   3. AddMissingCurlyBraces->format($source = '<?php\r\n\r\n$serverName = "localhost";\r\n$dBUsername = "root";\r\n$dBPassword = "";\r\n$dBName = "data_app";\r\n\r\n$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);\r\n\r\nif (!$conn)\r\n{\r\n    die("Connection failed: ". mysqli_connect_error());\r\n}\r\n\r\n\r\n') C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php:326
+    0.0038     755424   4. AddMissingCurlyBraces->addBraces($source = '<?php\r\n\r\n$serverName = "localhost";\r\n$dBUsername = "root";\r\n$dBPassword = "";\r\n$dBName = "data_app";\r\n\r\n$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);\r\n\r\nif (!$conn)\r\n{\r\n    die("Connection failed: ". mysqli_connect_error());\r\n}\r\n\r\n\r\n') C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php:41
+    0.0040     781688   5. each($arr = [0 => [0 => 382, 1 => '<?php\r\n', 2 => 1], 1 => [0 => 385, 1 => '\r\n', 2 => 2], 2 => [0 => 312, 1 => '$serverName', 2 => 3], 3 => [0 => 385, 1 => ' ', 2 => 3], 4 => '=', 5 => [0 => 385, 1 => ' ', 2 => 3], 6 => [0 => 315, 1 => '"localhost"', 2 => 3], 7 => ';', 8 => [0 => 385, 1 => '\r\n', 2 => 3], 9 => [0 => 312, 1 => '$dBUsername', 2 => 4], 10 => [0 => 385, 1 => ' ', 2 => 4], 11 => '=', 12 => [0 => 385, 1 => ' ', 2 => 4], 13 => [0 => 315, 1 => '"root"', 2 => 4], 14 => ';', 15 => [0 => 385, 1 => '\r\n', 2 => 4], 16 => [0 => 312, 1 => '$dBPassword', 2 => 5], 17 => [0 => 385, 1 => ' ', 2 => 5], 18 => '=', 19 => [0 => 385, 1 => ' ', 2 => 5], 20 => [0 => 315, 1 => '""', 2 => 5], 21 => ';', 22 => [0 => 385, 1 => '\r\n', 2 => 5], 23 => [0 => 312, 1 => '$dBName', 2 => 6], 24 => [0 => 385, 1 => ' ', 2 => 6], 25 => '=', 26 => [0 => 385, 1 => ' ', 2 => 6], 27 => [0 => 315, 1 => '"data_app"', 2 => 6], 28 => ';', 29 => [0 => 385, 1 => '\r\n\r\n', 2 => 6], 30 => [0 => 312, 1 => '$conn', 2 => 8], 31 => [0 => 385, 1 => ' ', 2 => 8], 32 => '=', 33 => [0 => 385, 1 => ' ', 2 => 8], 34 => [0 => 311, 1 => 'mysqli_connect', 2 => 8], 35 => '(', 36 => [0 => 312, 1 => '$serverName', 2 => 8], 37 => ',', 38 => [0 => 385, 1 => ' ', 2 => 8], 39 => [0 => 312, 1 => '$dBUsername', 2 => 8], 40 => ',', 41 => [0 => 385, 1 => ' ', 2 => 8], 42 => [0 => 312, 1 => '$dBPassword', 2 => 8], 43 => ',', 44 => [0 => 385, 1 => ' ', 2 => 8], 45 => [0 => 312, 1 => '$dBName', 2 => 8], 46 => ')', 47 => ';', 48 => [0 => 385, 1 => '\r\n\r\n', 2 => 8], 49 => [0 => 322, 1 => 'if', 2 => 10], 50 => [0 => 385, 1 => ' ', 2 => 10], 51 => '(', 52 => '!', 53 => [0 => 312, 1 => '$conn', 2 => 10], 54 => ')', 55 => [0 => 385, 1 => '\r\n', 2 => 10], 56 => '{', 57 => [0 => 385, 1 => '\r\n    ', 2 => 11], 58 => [0 => 321, 1 => 'die', 2 => 12], 59 => '(', 60 => [0 => 315, 1 => '"Connection failed: "', 2 => 12], 61 => '.', 62 => [0 => 385, 1 => ' ', 2 => 12], 63 => [0 => 311, 1 => 'mysqli_connect_error', 2 => 12], 64 => '(', 65 => ')', 66 => ')', 67 => ';', 68 => [0 => 385, 1 => '\r\n', 2 => 12], 69 => '}', 70 => [0 => 385, 1 => '\r\n\r\n\r\n', 2 => 13]]) C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php:54
+
+<?php
+
+$serverName = "localhost";
+$dBUsername = "root";
+$dBPassword = "";
+$dBName     = "data_app";
+
+$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
+
+if (!$conn) {
+	die("Connection failed: ".mysqli_connect_error());
+}

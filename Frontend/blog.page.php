@@ -31,6 +31,9 @@ if (isset($_GET['id'])) {
     <div class="blog-hero" style="background-image: url(uploads/<?php echo $row[
         'blog_img'
     ]; ?>)">
+    <div class="container text-center py-5">
+        <h3 class="display-2 text-white mb-4 animated slideInDown"  style="margin-top: 15%; font-size: 50px"><?php echo $row['blog_title'];?></h3>
+    </div>
     </div>
 
     <div class="container">
@@ -39,11 +42,11 @@ if (isset($_GET['id'])) {
             <div class="col-md-8">
                 <summary>
                     <h3><?php echo ucwords($row['blog_title']); ?></h3>
-                    <div class="blog-date"><?php echo $row[
+                    <div class="blog-date">Publié le : <?php echo $row[
                         'blog_date'
-                    ]; ?></div>
+                    ]; ?></div><br>
                 </summary>
-                <p><?php echo $row['blog_content']; ?></p>
+                <p><?php echo nl2br($row['blog_content']); ?></p>
             </div>
             <div class="col-md-4">
                 <div class="sidebar-box">
@@ -59,6 +62,6 @@ if (isset($_GET['id'])) {
             </div>
         </div>
 
-    </div>
+    </div><br><br>
     <?php include 'footer.php';
 ?>

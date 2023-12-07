@@ -1,0 +1,94 @@
+
+Deprecated: The each() function is deprecated. This message will be suppressed on further calls in C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php on line 54
+
+Call Stack:
+    0.0025     744176   1. {main}() C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php:0
+    0.0028     758880   2. CodeFormatter->formatCode($source = '<?php\r\n    if(isset($_POST[\'sub_inp\']))\r\n    {\r\n        require("connexion.php");\r\n\r\n\r\n        // Recuperation des variables\r\n        $nom = $_POST[\'f_name\'];\r\n        $prenom = $_POST[\'l_name\'];\r\n        $user = $_POST[\'uid\'];\r\n        $email = $_POST[\'email\'];\r\n        $password = $_POST[\'pwd\'];\r\n        $passwordRepeat  = $_POST[\'pwd_re\'];\r\n        $genre = $_POST[\'genre\'];\r\n        $bio = $_POST[\'bio_user\'];\r\n        $level= 1 ; \r\n\r\n        // Verification des erreurs lors de la creation\r\n        if (em'...) C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php:1736
+    0.0030     762976   3. AddMissingCurlyBraces->format($source = '<?php\r\n    if(isset($_POST[\'sub_inp\']))\r\n    {\r\n        require("connexion.php");\r\n\r\n\r\n        // Recuperation des variables\r\n        $nom = $_POST[\'f_name\'];\r\n        $prenom = $_POST[\'l_name\'];\r\n        $user = $_POST[\'uid\'];\r\n        $email = $_POST[\'email\'];\r\n        $password = $_POST[\'pwd\'];\r\n        $passwordRepeat  = $_POST[\'pwd_re\'];\r\n        $genre = $_POST[\'genre\'];\r\n        $bio = $_POST[\'bio_user\'];\r\n        $level= 1 ; \r\n\r\n        // Verification des erreurs lors de la creation\r\n        if (em'...) C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php:326
+    0.0030     762976   4. AddMissingCurlyBraces->addBraces($source = '<?php\r\n    if(isset($_POST[\'sub_inp\']))\r\n    {\r\n        require("connexion.php");\r\n\r\n\r\n        // Recuperation des variables\r\n        $nom = $_POST[\'f_name\'];\r\n        $prenom = $_POST[\'l_name\'];\r\n        $user = $_POST[\'uid\'];\r\n        $email = $_POST[\'email\'];\r\n        $password = $_POST[\'pwd\'];\r\n        $passwordRepeat  = $_POST[\'pwd_re\'];\r\n        $genre = $_POST[\'genre\'];\r\n        $bio = $_POST[\'bio_user\'];\r\n        $level= 1 ; \r\n\r\n        // Verification des erreurs lors de la creation\r\n        if (em'...) C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php:41
+    0.0030     943304   5. each($arr = [0 => [0 => 382, 1 => '<?php\r\n', 2 => 1], 1 => [0 => 385, 1 => '    ', 2 => 2], 2 => [0 => 322, 1 => 'if', 2 => 2], 3 => '(', 4 => [0 => 361, 1 => 'isset', 2 => 2], 5 => '(', 6 => [0 => 312, 1 => '$_POST', 2 => 2], 7 => '[', 8 => [0 => 315, 1 => '\'sub_inp\'', 2 => 2], 9 => ']', 10 => ')', 11 => ')', 12 => [0 => 385, 1 => '\r\n    ', 2 => 2], 13 => '{', 14 => [0 => 385, 1 => '\r\n        ', 2 => 3], 15 => [0 => 261, 1 => 'require', 2 => 4], 16 => '(', 17 => [0 => 315, 1 => '"connexion.php"', 2 => 4], 18 => ')', 19 => ';', 20 => [0 => 385, 1 => '\r\n\r\n\r\n        ', 2 => 4], 21 => [0 => 380, 1 => '// Recuperation des variables\r\n', 2 => 7], 22 => [0 => 385, 1 => '        ', 2 => 8], 23 => [0 => 312, 1 => '$nom', 2 => 8], 24 => [0 => 385, 1 => ' ', 2 => 8], 25 => '=', 26 => [0 => 385, 1 => ' ', 2 => 8], 27 => [0 => 312, 1 => '$_POST', 2 => 8], 28 => '[', 29 => [0 => 315, 1 => '\'f_name\'', 2 => 8], 30 => ']', 31 => ';', 32 => [0 => 385, 1 => '\r\n        ', 2 => 8], 33 => [0 => 312, 1 => '$prenom', 2 => 9], 34 => [0 => 385, 1 => ' ', 2 => 9], 35 => '=', 36 => [0 => 385, 1 => ' ', 2 => 9], 37 => [0 => 312, 1 => '$_POST', 2 => 9], 38 => '[', 39 => [0 => 315, 1 => '\'l_name\'', 2 => 9], 40 => ']', 41 => ';', 42 => [0 => 385, 1 => '\r\n        ', 2 => 9], 43 => [0 => 312, 1 => '$user', 2 => 10], 44 => [0 => 385, 1 => ' ', 2 => 10], 45 => '=', 46 => [0 => 385, 1 => ' ', 2 => 10], 47 => [0 => 312, 1 => '$_POST', 2 => 10], 48 => '[', 49 => [0 => 315, 1 => '\'uid\'', 2 => 10], 50 => ']', 51 => ';', 52 => [0 => 385, 1 => '\r\n        ', 2 => 10], 53 => [0 => 312, 1 => '$email', 2 => 11], 54 => [0 => 385, 1 => ' ', 2 => 11], 55 => '=', 56 => [0 => 385, 1 => ' ', 2 => 11], 57 => [0 => 312, 1 => '$_POST', 2 => 11], 58 => '[', 59 => [0 => 315, 1 => '\'email\'', 2 => 11], 60 => ']', 61 => ';', 62 => [0 => 385, 1 => '\r\n        ', 2 => 11], 63 => [0 => 312, 1 => '$password', 2 => 12], 64 => [0 => 385, 1 => ' ', 2 => 12], 65 => '=', 66 => [0 => 385, 1 => ' ', 2 => 12], 67 => [0 => 312, 1 => '$_POST', 2 => 12], 68 => '[', 69 => [0 => 315, 1 => '\'pwd\'', 2 => 12], 70 => ']', 71 => ';', 72 => [0 => 385, 1 => '\r\n        ', 2 => 12], 73 => [0 => 312, 1 => '$passwordRepeat', 2 => 13], 74 => [0 => 385, 1 => '  ', 2 => 13], 75 => '=', 76 => [0 => 385, 1 => ' ', 2 => 13], 77 => [0 => 312, 1 => '$_POST', 2 => 13], 78 => '[', 79 => [0 => 315, 1 => '\'pwd_re\'', 2 => 13], 80 => ']', 81 => ';', 82 => [0 => 385, 1 => '\r\n        ', 2 => 13], 83 => [0 => 312, 1 => '$genre', 2 => 14], 84 => [0 => 385, 1 => ' ', 2 => 14], 85 => '=', 86 => [0 => 385, 1 => ' ', 2 => 14], 87 => [0 => 312, 1 => '$_POST', 2 => 14], 88 => '[', 89 => [0 => 315, 1 => '\'genre\'', 2 => 14], 90 => ']', 91 => ';', 92 => [0 => 385, 1 => '\r\n        ', 2 => 14], 93 => [0 => 312, 1 => '$bio', 2 => 15], 94 => [0 => 385, 1 => ' ', 2 => 15], 95 => '=', 96 => [0 => 385, 1 => ' ', 2 => 15], 97 => [0 => 312, 1 => '$_POST', 2 => 15], 98 => '[', 99 => [0 => 315, 1 => '\'bio_user\'', 2 => 15], 100 => ']', 101 => ';', 102 => [0 => 385, 1 => '\r\n        ', 2 => 15], 103 => [0 => 312, 1 => '$level', 2 => 16], 104 => '=', 105 => [0 => 385, 1 => ' ', 2 => 16], 106 => [0 => 309, 1 => '1', 2 => 16], 107 => [0 => 385, 1 => ' ', 2 => 16], 108 => ';', 109 => [0 => 385, 1 => ' \r\n\r\n        ', 2 => 16], 110 => [0 => 380, 1 => '// Verification des erreurs lors de la creation\r\n', 2 => 18], 111 => [0 => 385, 1 => '        ', 2 => 19], 112 => [0 => 322, 1 => 'if', 2 => 19], 113 => [0 => 385, 1 => ' ', 2 => 19], 114 => '(', 115 => [0 => 362, 1 => 'empty', 2 => 19], 116 => '(', 117 => [0 => 312, 1 => '$user', 2 => 19], 118 => ')', 119 => [0 => 385, 1 => ' ', 2 => 19], 120 => [0 => 284, 1 => '||', 2 => 19], 121 => [0 => 385, 1 => ' ', 2 => 19], 122 => [0 => 362, 1 => 'empty', 2 => 19], 123 => '(', 124 => [0 => 312, 1 => '$email', 2 => 19], 125 => ')', 126 => [0 => 385, 1 => ' ', 2 => 19], 127 => [0 => 284, 1 => '||', 2 => 19], ...]) C:\Users\hp\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php:54
+
+<?php
+if (isset($_POST['sub_inp'])) {
+	require ("connexion.php");
+
+	// Recuperation des variables
+	$nom            = $_POST['f_name'];
+	$prenom         = $_POST['l_name'];
+	$user           = $_POST['uid'];
+	$email          = $_POST['email'];
+	$password       = $_POST['pwd'];
+	$passwordRepeat = $_POST['pwd_re'];
+	$genre          = $_POST['genre'];
+	$bio            = $_POST['bio_user'];
+	$level          = 1;
+
+	// Verification des erreurs lors de la creation
+	if (empty($user) || empty($email) || empty($password) || empty($passwordRepeat)) {
+		header("Location: ../Frontend/signup.php?error=emptyfields&uid=".$user."&mail=".$email);
+		exit();
+	} else if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $user)) {
+		header("Location: ../Frontend/signup.php?error=invalidmailuid");
+		exit();
+	} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		header("Location: ../Frontend/signup.php?error=invalidmail&uid=".$user);
+		exit();
+	} else if (!preg_match("/^[a-zA-Z0-9]*$/", $user)) {
+		header("Location: ../Frontend/signup.php?error=invaliduid&mail=".$email);
+		exit();
+	} else if ($password !== $passwordRepeat) {
+		header("Location: ../Frontend/signup.php?error=passwordcheck&uid=".$user."&mail=".$email);
+		exit();
+	} else {
+		// checking if a user already exists with the given user
+		$sql = "select uidUsers from users where uidUsers=?;";
+
+		$stmt = mysqli_stmt_init($conn);
+		if (!mysqli_stmt_prepare($stmt, $sql)) {
+			header("Location: ../Frontend/signup.php?error=sqlerror");
+			exit();
+		} else {
+			mysqli_stmt_bind_param($stmt, "s", $user);
+			mysqli_stmt_execute($stmt);
+			mysqli_stmt_store_result($stmt);
+
+			$resultCheck = mysqli_stmt_num_rows($stmt);
+
+			if ($resultCheck > 0) {
+				header("Location: ../Frontend/signup.php?error=usertaken&mail=".$email);
+				exit();
+			} else {
+				$FileNameNew = 'default.png';
+				include ('upload.back.php');
+
+				$sql = "insert into users(userLevel,f_name, l_name, uidUsers, emailUsers, pwdUsers, gender, "
+				."bio, userImg) "
+				."values (?,?,?,?,?,?,?,?,?)";
+				$stmt = mysqli_stmt_init($conn);
+				if (!mysqli_stmt_prepare($stmt, $sql)) {
+					header("Location: ../Frontend/signup.php?error=sqlerror");
+					exit();
+				} else {
+					$hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+
+					mysqli_stmt_bind_param($stmt, "issssssss", $level, $nom, $prenom, $user, $email,
+						$hashedPwd, $genre,
+						$bio, $FileNameNew);
+					mysqli_stmt_execute($stmt);
+					mysqli_stmt_store_result($stmt);
+
+					header("Location: ../Frontend/login.php?signup=success");
+					exit();
+				}
+			}
+		}
+	}
+
+	mysqli_stmt_close($stmt);
+	mysqli_close($conn);
+
+} else {
+	header("Location: ../Frontend/signup.php");
+	exit();
+}
+?>

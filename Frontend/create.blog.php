@@ -24,7 +24,7 @@ if (!isset($_SESSION['userId'])) {
 
 <form action="../Backend/create.blog.back.php" enctype="multipart/form-data" method="post">
     <div class="col-lg-6  fadeIn" style="margin-left: 25%;">
-        <h1 style="margin-left: 20%;">Création de Blog</h1>
+        <h1 style="margin-left: 30%;">Création de Blog</h1>
         <div class="p-5 rounded contact-form">
             <div class="mb-4">
                 <input type="text" name="btitle" id="title" class="form-control border-0 py-3"

@@ -94,7 +94,7 @@ if (isset($_SESSION['userId'])) {
     <input type="submit" name="sub_log" value="valider">
 </form>-->
 
-
+ 
 <?php include 'th/formulaire.php'; ?>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

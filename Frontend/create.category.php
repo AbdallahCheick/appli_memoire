@@ -1,14 +1,6 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <?php
 
-    session_start();
-    
-    define('TITLE',"Creation de categorie");
+include('navbar.php');
     
     if(!isset($_SESSION['userId']))
     {
@@ -37,15 +29,27 @@
                                             }
                                             else if (isset($_GET['catcreation']) == 'success')
                                             {
-                                                echo '<h5 class="text-success">*Category successfully created</h5>';
+                                                echo '<h5 class="text-success">Cartegorie crée avec success</h5>';
                                             }
                                         ?>
                                         </span>
-    <form method="post" action="../Backend/create.category.back.php">
-        <input type="text" name="cat_name" placeholder="Nom de la categorie" >
-        <textarea name="cat_desc" id="cat_desc" placeholder="Description de la categorie" cols="30" rows="10"></textarea>
-        <input type="submit" value="Creer categorie" name="create_cat"><br>
-        <a href="category.php">Liste des categories</a>
-    </form>
-</body>
-</html>
+    <br><br>
+<form method="post" action="../Backend/create.category.back.php">
+    <div class="col-lg-6  fadeIn" style="margin-left: 25%;">
+        <h1 style="margin-left: 30%;">Création de Categories</h1>
+        <div class="p-5 rounded contact-form">
+            <div class="mb-4">
+                <input type="text" name="cat_name" placeholder="Nom de la categorie" class="form-control border-0 py-3">
+            </div>
+            <div class="mb-4">
+                <textarea class="w-100 form-control border-0 py-3" name="cat_desc" id="cat_desc" placeholder="Description de la categorie" cols="30" rows="10"></textarea>
+            </div>
+            <div class="text-start">
+                <input class="btn bg-primary text-white py-3 px-5" type="submit" value="Creer categorie" name="create_cat">
+            </div>
+        </div>
+    </div>
+</form><br><br>
+
+    
+<?php include('footer.php');?>

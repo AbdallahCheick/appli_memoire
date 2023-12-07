@@ -78,7 +78,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
          ?>
 <form method="post" action="../Backend/create.project.back.php" enctype="multipart/form-data">
     <div class="col-lg-6  fadeIn" style="margin-left: 25%;">
-        <h1 style="margin-left: 20%;">Soumission de projet</h1>
+        <h1 style="margin-left: 30%;">Soumission de projet</h1>
         <div class="p-5 rounded contact-form">
             <div class="mb-4">
                 <input type="text" class="form-control border-0 py-3" placeholder="Theme du projet" id="t_projet"

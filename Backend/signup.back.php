@@ -88,7 +88,7 @@
                         mysqli_stmt_execute($stmt);
                         mysqli_stmt_store_result($stmt);
                         
-                        header("Location: ../Frontend/signup.php?signup=success");
+                        header("Location: ../Frontend/login.php?signup=success"); 
                         exit();
                     }
                 }

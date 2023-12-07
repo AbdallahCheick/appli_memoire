@@ -49,7 +49,7 @@
                         style="top: -28px; right: 20px;"><?php echo '<a class="text-white" href="blog.page.php?id=' .
                             $row['blog_id'] .
                             '">' .
-                            substr($row['blog_title'], 0, 100) .
+                            substr($row['blog_title'], 0, 40) .
                             '...</a>'; ?></span>
                     <div class="blog-btn d-flex justify-content-between position-relative px-3"
                         style="margin-top: -75px;">
