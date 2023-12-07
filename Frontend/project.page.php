@@ -26,7 +26,7 @@
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        die('SQL error');
+        die('SQL error error');
     } else {
         mysqli_stmt_bind_param($stmt, 's', $projetId);
         mysqli_stmt_execute($stmt);
