@@ -123,6 +123,22 @@ CREATE TABLE IF NOT EXISTS `projet` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `soumission`
+--
+
+DROP TABLE IF EXISTS `soumission`;
+CREATE TABLE IF NOT EXISTS `soumission` (
+  `soum_id` int NOT NULL AUTO_INCREMENT,
+  `soum_pro` int NOT NULL,
+  `soum_uid` int NOT NULL,
+  PRIMARY KEY (`soum_id`),
+  KEY `soum_pro` (`soum_pro`),
+  KEY `soum_uid` (`soum_uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `pwdreset`
 --
 
@@ -213,6 +229,13 @@ ALTER TABLE `posts`
 ALTER TABLE `projet`
   ADD CONSTRAINT `projet_ibfk_1` FOREIGN KEY (`projet_cat`) REFERENCES `categories` (`cat_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `projet_ibfk_2` FOREIGN KEY (`projet_by`) REFERENCES `users` (`idUsers`) ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `soumission`
+--
+ALTER TABLE `soumission`
+  ADD CONSTRAINT `soumission_ibfk_1` FOREIGN KEY (`soum_pro`) REFERENCES `projet` (`projet_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `soumission_ibfk_2` FOREIGN KEY (`soum_uid`) REFERENCES `users` (`idUsers`) ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `topics`
