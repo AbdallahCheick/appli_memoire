@@ -1,13 +1,12 @@
 <?php
-include '../Backend/connexion.php';
-
-define('TITLE', 'Profil');
 
 //if (!isset($_SESSION['userId'])) {
 //    header('Location: login.php');
 //    exit();
 //}
+
 include 'navbar.php';
+
 if (isset($_GET['id'])) {
     $userid = $_GET['id'];
 } else {

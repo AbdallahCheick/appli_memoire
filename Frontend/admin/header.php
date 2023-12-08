@@ -18,6 +18,12 @@ if (!isset($_SESSION['userId'])) {
     header('Location: index.php');
     exit();
 }
+else{
+    if($_SESSION['userLevel'] != 3){
+        header('Location: index.php');
+        exit();
+    }
+}
 ?>
 
 <body>
@@ -66,7 +72,7 @@ if (!isset($_SESSION['userId'])) {
                         } else {
                             echo '';
                         } ?>">
-                            <span class="las la-clipboard-list"></span>
+                            <span class="las la-user-tie"></span>
                             <small>Utilisateurs</small>
                         </a>
                     </li>
@@ -78,7 +84,7 @@ if (!isset($_SESSION['userId'])) {
                         } else {
                             echo '';
                         } ?>">
-                            <span class="las la-clipboard-list"></span>
+                            <span class="las la-users"></span>
                             <small>Investisseurs</small>
                         </a>
                     </li>
@@ -90,7 +96,7 @@ if (!isset($_SESSION['userId'])) {
                         } else {
                             echo '';
                         } ?>">
-                            <span class="las la-clipboard-list"></span>
+                            <span class="las la-briefcase"></span>
                             <small>Projets</small>
                         </a>
                     </li>
@@ -100,7 +106,7 @@ if (!isset($_SESSION['userId'])) {
                         } else {
                             echo '';
                         } ?>">
-                            <span class="las la-shopping-cart"></span>
+                            <span class="lab la-blogger-b"></span>
                             <small>Blogs</small>
                         </a>
                     </li>
@@ -110,7 +116,7 @@ if (!isset($_SESSION['userId'])) {
                         } else {
                             echo '';
                         } ?>">
-                            <span class="las la-tasks"></span>
+                            <span class="lab la-forumbee"></span>
                             <small>Forum</small>
                         </a>
                     </li>
