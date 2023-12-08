@@ -113,11 +113,14 @@ CREATE TABLE IF NOT EXISTS `projet` (
   `projet_date` date NOT NULL,
   `projet_cat` int NOT NULL,
   `projet_by` int NOT NULL,
+  `projet_statut` int NOT NULL,
+  `projet_ass` int NOT NULL,
   `projet_descr` varchar(4000) DEFAULT NULL,
   `projet_file` varchar(500) DEFAULT 'default.png',
   PRIMARY KEY (`projet_id`),
   KEY `projet_cat` (`projet_cat`),
-  KEY `projet_by` (`projet_by`)
+  KEY `projet_by` (`projet_by`),
+  KEY `projet_ass` (`projet_ass`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
@@ -228,7 +231,8 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `projet`
   ADD CONSTRAINT `projet_ibfk_1` FOREIGN KEY (`projet_cat`) REFERENCES `categories` (`cat_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `projet_ibfk_2` FOREIGN KEY (`projet_by`) REFERENCES `users` (`idUsers`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `projet_ibfk_2` FOREIGN KEY (`projet_ass`) REFERENCES `users` (`idUsers`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `projet_ibfk_3` FOREIGN KEY (`projet_by`) REFERENCES `users` (`idUsers`) ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `soumission`
