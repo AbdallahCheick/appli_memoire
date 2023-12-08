@@ -5,8 +5,8 @@ if (isset($_POST['requestButton'])) {
     include '../../Backend/connexion.php';
 
     $id_projet = $_POST['projet_id'];
-    $statut = 2;
-    $inv = $_POST['inv_pro'];
+    $statut = 1;
+    $inv = $_POST['projet_ass'];
 
     // Utilisez une seule requête UPDATE pour mettre à jour les colonnes spécifiées
     $sql = 'UPDATE projet SET projet_statut=?, projet_ass=? WHERE projet_id=?';

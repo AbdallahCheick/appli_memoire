@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `projet` (
   `projet_cat` int NOT NULL,
   `projet_by` int NOT NULL,
   `projet_statut` int NOT NULL,
-  `projet_ass` int NOT NULL,
+  `projet_ass` int DEFAULT NULL,
   `projet_descr` varchar(4000) DEFAULT NULL,
   `projet_file` varchar(500) DEFAULT 'default.png',
   PRIMARY KEY (`projet_id`),
