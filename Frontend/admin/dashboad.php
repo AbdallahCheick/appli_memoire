@@ -1,7 +1,6 @@
 <?php
 $page = 1;
 include 'header.php';
-
 ?>
 <main>
 
@@ -142,7 +141,34 @@ include 'header.php';
                 <div class="card-progress">
                     <small>Administrateur</small>
                     <div class="card-indicator">
-                        <div class="indicator one" style="width: 60%"></div>
+                        <div class="indicator one" style="width: <?php echo $nb_admin; ?>%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <?php
+            $sql = "SELECT COUNT(*) as nb_topic
+                FROM topics;
+                ";
+            $result = $conn->query($sql);
+            if (!$result) {
+                die('Erreur dans la requête SQL: ' . $conn->error);
+            }
+
+            // Récupération du résultat
+            $row = $result->fetch_assoc();
+            $nb_topic = $row['nb_topic'];
+            ?>
+
+            <div class="card">
+                <div class="card-head">
+                    <h2><?php echo $nb_topic; ?> </h2>
+                    <span class="las la-envelope"></span>
+                </div>
+                <div class="card-progress">
+                    <small>Forums</small>
+                    <div class="card-indicator">
+                        <div class="indicator three" style="width: 60%"></div>
                     </div>
                 </div>
             </div>

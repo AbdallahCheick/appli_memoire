@@ -31,9 +31,10 @@ if (isset($_GET['id'])) {
     <div class="blog-hero" style="background-image: url(uploads/<?php echo $row[
         'blog_img'
     ]; ?>)">
-    <div class="container text-center py-5">
-        <h3 class="display-2 text-white mb-4 animated slideInDown"  style="margin-top: 15%; font-size: 50px"><?php echo $row['blog_title'];?></h3>
-    </div>
+        <div class="container text-center py-5">
+            <h3 class="display-2 text-white mb-4 animated slideInDown" style="margin-top: 15%; font-size: 50px">
+                <?php echo $row['blog_title']; ?></h3>
+        </div>
     </div>
 
     <div class="container">
@@ -53,11 +54,11 @@ if (isset($_GET['id'])) {
                     <img style="width: 15%; height: 15%;" src="uploads/<?php echo $row[
                         'userImg'
                     ]; ?>" alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle">
-                    <h3 class="text-black">Auteur: <?php echo ucwords(
-                        $row['uidUsers']
-                    ); ?></h3>
+                    <h3 class="text-black">Auteur:<a href="profile.php?id=<?php echo $row[
+                        'idUsers'
+                    ]; ?>"> <?php echo ucwords($row['uidUsers']); ?> </a></h3>
                     <p><?php echo ucwords($row['bio']); ?></p>
-                    <!--<p><a href="profile.php" class="btn btn-primary btn-md">Visiter le profil</a></p>-->
+                    <!--<p><a href=" profile.php" class="btn btn-primary btn-md">Visiter le profil</a></p>-->
                 </div>
             </div>
         </div>

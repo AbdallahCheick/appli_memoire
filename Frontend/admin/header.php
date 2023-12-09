@@ -20,9 +20,8 @@ include_once '../../Backend/connexion.php';
 if (!isset($_SESSION['userId'])) {
     header('Location: index.php');
     exit();
-}
-else{
-    if($_SESSION['userLevel'] != 3){
+} else {
+    if ($_SESSION['userLevel'] != 3) {
         header('Location: index.php');
         exit();
     }
@@ -37,13 +36,17 @@ else{
         </div>
 
         <div class="side-content">
-            <div class="profile">
-                <div class="profile-img bg-img" style="background-image: url(../uploads/<?php echo $_SESSION[
-                    'userImg'
-                ]; ?>)"></div>
-                <h4><?php echo $_SESSION['userUid']; ?> </h4>
-                <small>Admin</small>
-            </div>
+            <a href="profile.admin.php">
+                <div class="profile">
+
+                    <div class="profile-img bg-img" style="background-image: url(../uploads/<?php echo $_SESSION[
+                        'userImg'
+                    ]; ?>)"></div>
+
+                    <h4><?php echo $_SESSION['userUid']; ?> </h4>
+                    <small>Admin</small>
+                </div>
+            </a>
 
             <div class="side-menu">
                 <ul>
@@ -58,15 +61,13 @@ else{
                         </a>
                     </li>
                     <li>
-                        <a href="profile.admin.php" class="<?php if (
-                            $page == 2
-                        ) {
+                        <a href="admin.admin.php" class="<?php if ($page == 2) {
                             echo 'active';
                         } else {
                             echo '';
                         } ?>">
-                            <span class="las la-user-alt"></span>
-                            <small>Profil</small>
+                            <span class="las la-user-shield"></span>
+                            <small>Administrateur</small>
                         </a>
                     </li>
                     <li>
@@ -140,13 +141,14 @@ else{
                 <div class="header-menu">
 
                     <div class="user">
-                        <div class="bg-img" style="background-image: url(../uploads/<?php echo $_SESSION[
-                            'userImg'
-                        ]; ?>)"></div>
+                        <a href="profile.admin.php">
+                            <div class="bg-img" style="background-image: url(../uploads/<?php echo $_SESSION[
+                                'userImg'
+                            ]; ?>)"></div><a href="profile.admin.php">
 
-                        <span class="las la-power-off"></span>
-                        <span><a href="../../Backend/logout.admin.back.php"
-                                class="nav-item nav-link text-white">Déconnexion</a></span>
+                                <span class="las la-power-off"></span>
+                                <span><a href="../../Backend/logout.admin.back.php"
+                                        class="nav-item nav-link text-white">Déconnexion</a></span>
                     </div>
                 </div>
             </div>

@@ -15,8 +15,12 @@
 	            <h1 class="profile-user-name"><?php echo ucwords(
                  $user['uidUsers']
              ); ?></h1>
+	            <?php if ($userid == $_SESSION['userId']) {
+                 echo '<a href="edit.profile.php" class="btn btn-primary profile-edit-btn">Modifier Le profil</a>';
+             } else {
+                 echo '';
+             } ?>
 
-	            <a href="edit.profile.php" class="btn btn-primary profile-edit-btn">Modifier Le profil</a>
 	        </div>
 
 	        <div class="profile-stats">

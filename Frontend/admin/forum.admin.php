@@ -12,15 +12,15 @@ include 'header.php';
     <span class="text-center">
         <?php if (isset($_GET['error'])) {
             if ($_GET['error'] == 'emptyfields') {
-                echo '<h5 class="text-danger">*Remplissez tous le champs</h5>';
-            } elseif ($_GET['error'] == 'titletaken') {
-                echo '<h5 class="text-danger">Le titre existe deja</h5>';
+                echo '<h5 class="text-danger">Veuillez remplir tous les champs</h5>';
             } elseif ($_GET['error'] == 'sqlerror') {
-                echo '<h5 class="text-danger">* Erreur : Veuillez contacter l\' administrateur</h5>';
+                echo '<h5 class="text-danger">Erreur : Veuillez contacter tous l\' admin</h5>';
             }
-        } elseif (isset($_GET['catcreation']) == 'success') {
-            echo '<h5 class="text-success">Blog creer avec success</h5>';
-        } ?>
+        }
+//elseif (isset($_GET['operation']) == 'success') {
+// echo '<h5 class="text-success">Forum creer avec Success</h5>';
+//}
+?>
     </span>
     <div class="page-header">
         <h1>Gestion des Forums</h1>
@@ -33,25 +33,49 @@ include 'header.php';
     </button> <br><br>
 
     <div id="form-template" class="hidden">
-        <form action="../../Backend/create.blog.admin.back.php" enctype="multipart/form-data" method="post"
-            id="requestResources">
+        <form method="post" action="../../Backend/create.forum.admin.back.php" id="requestResources">
             <h3 class="modalTitle">Ajout d'un forum</h3>
             <fieldset><br>
-                <p class="inputTitle">Sujet du forums</p>
+                <p class="inputTitle">Sujet du forum</p>
                 <input type="text" name="sujet_forum" class="inputText" placeholder="Le sujet du forum" required>
             </fieldset>
+            <?php
+            $sql = 'select cat_id, cat_name from categories;';
+            $stmt = mysqli_stmt_init($conn);
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                die('sql error');
+            } else {
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                if (mysqli_num_rows($result) == 0) {
+                    echo "<h5 class='text-center text-muted'>Aucun sujet creer avec" .
+                        'cette categorie</h5>';
+                } else {
+                     ?>
             <fieldset>
-                <p class="inputTitle">Photo illustrateur du blog</p>
-                <input type="file" id="imgInp" name='dp' class="inputText" placeholder="Project" required>
+                <p class="inputTitle">Categories du forum</p>
+                <select class="inputText" name="cat_forum">
+                    <?php while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<option value=' .
+                            $row['cat_id'] .
+                            '>' .
+                            $row['cat_name'] .
+                            '</option>';
+                    } ?>
+                </select><br><br>
             </fieldset>
+            <?php
+                }
+            }
+            ?>
             <fieldset>
                 <p class="inputTitle">Contenu du blog</p>
-                <textarea class="inputText" name="bcontent" id="content" cols="30" rows="10"
-                    placeholder="Contenus du blog" required></textarea>
+                <textarea class="inputText" name="post_content" id="content" cols="30" rows="10"
+                    placeholder="Contenus du sujet"></textarea>
             </fieldset>
             <fieldset>
-                <button type="submit" class="requireBtn" name="create_blog" id="requestButton" tabindex="4">Ajouter
-                    le blog</button>
+                <button type="submit" class="requireBtn" name="create_forum" id="requestButton" tabindex="4">Ajouter
+                    le forum</button>
             </fieldset>
         </form>
     </div>
@@ -67,12 +91,13 @@ include 'header.php';
                         <th><span class="las la-sort"></span> TITRE</th>
                         <th><span class="las la-sort"></span> AUTEUR</th>
                         <th><span class="las la-sort"></span> DATE</th>
+                        <th><span class="las la-sort"></span> CATEGORIE</th>
                         <th><span class="las la-sort"></span> ACTION</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $query = 'SELECT * FROM blogs ';
+                    $query = 'SELECT * FROM topics ';
                     // Exécution de la requête
                     $result = $conn->query($query);
 
@@ -90,13 +115,11 @@ include 'header.php';
                         ?></td>
                         <td>
                             <div class="client">
-                                <div class="client-img bg-img" style="background-image: url(../uploads/<?php echo $row[
-                                    'blog_img'
-                                ]; ?>)">
+                                <div class="client-img bg-img" style="background-image: url(../img/cover_forum.png)">
                                 </div>
                                 <div class="client-info">
                                     <h4><?php echo substr(
-                                        $row['blog_title'],
+                                        $row['topic_subject'],
                                         0,
                                         40
                                     ) . '...'; ?></h4>
@@ -107,7 +130,7 @@ include 'header.php';
                         <?php
                         $sql =
                             'SELECT * FROM users where idUsers= ' .
-                            $row['blog_by'] .
+                            $row['topic_by'] .
                             ' ;';
                         $resultat = $conn->query($sql);
                         if (!$result) {
@@ -123,13 +146,32 @@ include 'header.php';
 
                         </td>
                         <td>
-                            <?php echo $row['blog_date']; ?>
+                            <?php echo $row['topic_date']; ?>
+                        </td>
+
+                        <?php
+                        $idcat = $row['topic_cat'];
+                        $sqlie = "SELECT * FROM categories
+                                        WHERE cat_id = $idcat;
+                                        ";
+                        $resultats = $conn->query($sqlie);
+                        if (!$resultats) {
+                            die('Erreur dans la requête SQL: ' . $conn->error);
+                        }
+
+                        // Récupération du résultat
+                        $rowss = $resultats->fetch_assoc();
+                        $nom_cat = $rowss['cat_name'];
+                        ?>
+
+                        <td>
+                            <?php echo $nom_cat; ?>
                         </td>
                         <td>
                             <div class="actions">
-                                <a href="../../Backend/delete.blog.back.php?id=<?php echo $row[
-                                    'blog_id'
-                                ]; ?>&page=blog" class="delBtn">suprimer</a> <br><br>
+                                <a href="../../Backend/delete.forum.back.php?id=<?php echo $row[
+                                    'topic_id'
+                                ]; ?>&page=forum" class="delBtn">suprimer</a> <br><br>
                             </div>
                         </td>
                     </tr>

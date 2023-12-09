@@ -130,7 +130,8 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
     }
 }
 ?>
-
+<?php
+if ($userid == $_SESSION['userId']) { ?>
 <hr>
 <h3>Projet soumis</h3>
 <br><br>
@@ -138,16 +139,13 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 <?php
 $sql = 'select * from projet ' . 'where projet_by = ?';
 $stmt = mysqli_stmt_init($conn);
-
 if (!mysqli_stmt_prepare($stmt, $sql)) {
     die('SQL error');
 } else {
     mysqli_stmt_bind_param($stmt, 's', $userid);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
-
     echo '<div class="container">' . '<div class="row">';
-
     $row = mysqli_fetch_assoc($result);
     if (empty($row)) {
         echo '<div class="col-sm-4" style="padding-bottom: 30px;"></div>
@@ -180,7 +178,6 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
         echo '</div>' . '</div>';
     }
 }
+} else {echo '';}
 include 'footer.php';
-
-
-?>
+ ?>
