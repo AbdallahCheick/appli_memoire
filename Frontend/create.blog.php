@@ -10,7 +10,7 @@ if (!isset($_SESSION['userId'])) {
 <span class="text-center">
     <?php if (isset($_GET['error'])) {
         if ($_GET['error'] == 'emptyfields') {
-            echo '<h5 class="text-danger">*Fill In All The Fields</h5>';
+            echo '<h5 class="text-danger">*Remplissez tous les champs</h5>';
         } elseif ($_GET['error'] == 'titletaken') {
             echo '<h5 class="text-danger">Le titre existe deja</h5>';
         } elseif ($_GET['error'] == 'sqlerror') {

@@ -18,27 +18,27 @@
         // Verification des erreurs lors de la creation
         if (empty($user) || empty($email) || empty($password) || empty($passwordRepeat))
         {
-            header("Location: ../Frontend/signup.php?error=emptyfields&uid=".$user."&mail=".$email);
+            header("Location: ../Frontend/admin/invest.admin.php?error=emptyfields&uid=".$user."&mail=".$email);
             exit();
         }
         else if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $user))
         {
-            header("Location: ../Frontend/signup.php?error=invalidmailuid");
+            header("Location: ../Frontend/admin/invest.admin.php?error=invalidmailuid");
             exit();
         }
         else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
         {
-            header("Location: ../Frontend/signup.php?error=invalidmail&uid=".$user);
+            header("Location: ../Frontend/admin/invest.admin.php?error=invalidmail&uid=".$user);
             exit();
         }
         else if (!preg_match("/^[a-zA-Z0-9]*$/", $user))
         {
-            header("Location: ../Frontend/signup.php?error=invaliduid&mail=".$email);
+            header("Location: ../Frontend/admin/invest.admin.php?error=invaliduid&mail=".$email);
             exit();
         }
         else if ($password !== $passwordRepeat)
         {
-            header("Location: ../Frontend/signup.php?error=passwordcheck&uid=".$user."&mail=".$email);
+            header("Location: ../Frontend/admin/invest.admin.php?error=passwordcheck&uid=".$user."&mail=".$email);
             exit();
         }
         else
@@ -48,7 +48,7 @@
             $stmt = mysqli_stmt_init($conn);
             if (!mysqli_stmt_prepare($stmt, $sql))
             {
-                header("Location: ../Frontend/signup.php?error=sqlerror");
+                header("Location: ../Frontend/admin/invest.admin.php?error=sqlerror");
                 exit();
             }
             else
@@ -61,7 +61,7 @@
                 
                 if ($resultCheck > 0)
                 {
-                    header("Location: ../Frontend/signup.php?error=usertaken&mail=".$email);
+                    header("Location: ../Frontend/admin/invest.admin.php?error=usertaken&mail=".$email);
                     exit();
                 }
                 else
@@ -75,7 +75,7 @@
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sql))
                     {
-                        header("Location: ../Frontend/signup.php?error=sqlerror");
+                        header("Location: ../Frontend/admin/invest.admin.php?error=sqlerror");
                         exit();
                     }
                     else
@@ -88,7 +88,7 @@
                         mysqli_stmt_execute($stmt);
                         mysqli_stmt_store_result($stmt);
                         
-                        header("Location: ../Frontend/signup.php?signup=success");
+                        header("Location: ../Frontend/admin/invest.admin.php?signup=success");
                         exit();
                     }
                 }
@@ -101,7 +101,7 @@
     }
     else
     {
-        header("Location: ../Frontend/signup.php") ; 
+        header("Location: ../Frontend/admin/invest.admin.php") ; 
         exit();
     }
 ?>
