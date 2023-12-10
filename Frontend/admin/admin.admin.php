@@ -123,7 +123,10 @@ include 'header.php';
                         <th><span class="las la-sort"></span> EMAIL</th>
                         <th><span class="las la-sort"></span> GENRE</th>
                         <th><span class="las la-sort"></span> RÔLE</th>
-                        <th><span class="las la-sort"></span> ACTIONS</th>
+                        <?php if (
+                            $_SESSION['userId'] == 2
+                        ) { ?><th><span class="las la-sort"></span> ACTIONS</th>
+                        <?php } ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -178,6 +181,10 @@ include 'header.php';
                                 echo 'Administrateur';
                             } ?>
                         </td>
+                        <?php if (
+                            $_SESSION['userId'] == 2 &&
+                            $row['idUsers'] != 2
+                        ) { ?>
                         <td>
                             <div class="actions">
                                 <a href="../../Backend/delete.users.back.php?id=<?php echo $row[
@@ -185,6 +192,7 @@ include 'header.php';
                                 ]; ?>&page=user" class="delBtn">suprimer</a> <br><br>
                             </div>
                         </td>
+                        <?php } else {echo '';} ?>
                     </tr>
                     <?php }
                     ?>

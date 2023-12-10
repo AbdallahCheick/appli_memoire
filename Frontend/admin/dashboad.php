@@ -174,7 +174,9 @@ include 'header.php';
             </div>
 
         </div>
-
+        <div class="page-header">
+            <h1>Activités des administrateurs</h1>
+        </div>
 
         <div class="records table-responsive">
             <div>
