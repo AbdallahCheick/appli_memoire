@@ -123,18 +123,19 @@ include '../Backend/connexion.php';
                             echo '<a href="forum.php" class="nav-item nav-link">Forums</a>';
                         } ?>
                         <?php if (isset($_SESSION['userId'])) {
-                            if($_SESSION['userLevel'] == 1){
-                            echo '                        <div class="nav-item dropdown">
+                            if ($_SESSION['userLevel'] == 1) {
+                                echo '                        <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projet</a>
                             <div class="dropdown-menu rounded">
                                 <a href="project.php" class="dropdown-item">Liste des projets</a>
                                 <a href="create.project.php" class="dropdown-item">Soummettre un projet</a>
                             </div>
                         </div>
-                        ';}else{
-                            echo '<a href="ass.project.php" class="nav-item nav-link">Projet Assigné</a>
                         ';
-                        }
+                            } else {
+                                echo '<a href="ass.project.php" class="nav-item nav-link">Projet Assigné</a>
+                        ';
+                            }
                         } else {
                             echo '';
                         } ?>
@@ -180,15 +181,4 @@ include '../Backend/connexion.php';
         </nav>
     </div>
     </div>
-    <?php
-    function encoder ($value) {
-        $char =rand(100000000,999999999);
-        $id = $char.$value.$char;
-        return $id;
-    }
-    function decoder ($value){
-        $char = substr($value,9,-9);
-        return $char;
-    }
-?>
     <!-- Navbar End -->
