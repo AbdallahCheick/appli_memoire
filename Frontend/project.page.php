@@ -6,7 +6,7 @@
     }
 
     if (isset($_GET['id'])) {
-        $projetId = $_GET['id'];
+        $projetId = decoder($_GET['id']);
     } else {
         header('Location: index.php');
         exit();

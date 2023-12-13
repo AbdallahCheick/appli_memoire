@@ -4,7 +4,7 @@
 define('TITLE', 'Forum');
 
 if (isset($_GET['topic'])) {
-    $topic = $_GET['topic'];
+    $topic = decoder($_GET['topic']);
 } else {
     header('Location: index.php');
     exit();
@@ -108,7 +108,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                             <div class="pt-5">
 
                                 <p>Categories: <a href="forum.php?cat=' .
-                                    $forum['cat_id'] .
+                                    encoder($forum['cat_id']) .
                                     '">' .
                                     $forum['cat_name'] .
                                     '</a> Crée le  : <span class="date">' .
@@ -128,7 +128,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                 </div>
                 <div class="comment-body">
                 <h3> <a href="profile.php?id=' .
-                                $row['idUsers'] .
+                                encoder($row['idUsers']) .
                                 '">' .
                                 $row['uidUsers'] .
                                 '</a></h3>

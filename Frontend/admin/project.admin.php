@@ -3,6 +3,7 @@ $page = 5;
 include 'header.php';
 ?>
 
+
 <link rel="stylesheet" href="style.modal.css">
 <main>
 
@@ -19,7 +20,7 @@ include 'header.php';
             <form action="assign.projet.php" method='post' enctype="multipart/form-data" id="requestResources">
                 <h3 class="modalTitle">Assignation</h3>
                 <?php
-                $sql = 'SELECT projet_id, projet_theme FROM projet;';
+                $sql = 'SELECT projet_id, projet_theme FROM projet WHERE projet_statut=0 OR projet_statut=1;';
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     die('sql error');

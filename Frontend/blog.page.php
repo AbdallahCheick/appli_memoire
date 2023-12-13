@@ -2,7 +2,7 @@
 include 'navbar.php';
 
 if (isset($_GET['id'])) {
-    $blogId = $_GET['id'];
+    $blogId = decoder($_GET['id']);
 } else {
     header('Location: index.php');
     exit();
@@ -54,9 +54,9 @@ if (isset($_GET['id'])) {
                     <img style="width: 15%; height: 15%;" src="uploads/<?php echo $row[
                         'userImg'
                     ]; ?>" alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle">
-                    <h3 class="text-black">Auteur:<a href="profile.php?id=<?php echo $row[
+                    <h3 class="text-black">Auteur:<a href="profile.php?id=<?php echo encoder($row[
                         'idUsers'
-                    ]; ?>"> <?php echo ucwords($row['uidUsers']); ?> </a></h3>
+                    ]); ?>"> <?php echo ucwords($row['uidUsers']); ?> </a></h3>
                     <p><?php echo ucwords($row['bio']); ?></p>
                     <!--<p><a href=" profile.php" class="btn btn-primary btn-md">Visiter le profil</a></p>-->
                 </div>

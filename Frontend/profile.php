@@ -8,7 +8,7 @@
 include 'navbar.php';
 
 if (isset($_GET['id'])) {
-    $userid = $_GET['id'];
+    $userid = decoder($_GET['id']);
 } else {
     $userid = $_SESSION['userId'];
 }
@@ -57,7 +57,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             echo '<div class="col-sm-4" style="padding-bottom: 30px;">
                                         <div class="card user-blogs">
                                             <a href="blog.page.php?id=' .
-                $row['blog_id'] .
+                encoder($row['blog_id']) .
                 '">
                                             <img class="card-img-top" src="uploads/' .
                 $row['blog_img'] .
@@ -111,7 +111,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             echo '<div class="col-sm-4" style="padding-bottom: 30px;">
                                         <div class="card user-blogs">
                                             <a href="posts.php?topic=' .
-                $row['topic_id'] .
+                encoder($row['topic_id']) .
                 '">
                                             <img class="card-img-top" src="img/cover_forum.png" alt="Card image cap" width="150px" height="150 ">
                                             <div class="card-block p-2">
@@ -160,7 +160,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             echo '<div class="col-sm-4" style="padding-bottom: 30px;">
                                         <div class="card user-blogs">
                                             <a href="project.page.php?id=' .
-                $row['projet_id'] .
+                encoder($row['projet_id']) .
                 '">
                                             <img class="card-img-top" src="img/project-5.jpg" alt="Card image cap">
                                             <div class="card-block p-2">

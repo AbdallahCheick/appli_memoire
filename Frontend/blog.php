@@ -40,14 +40,14 @@
                 $result = mysqli_stmt_get_result($stmt);
 
                 while ($row = mysqli_fetch_assoc($result)) { ?>
-            <div class="col-lg-6 col-xl-4 wow fadeIn">
+            <div class="col-lg-6 col-xl-4 wow fadeIn"> 
                 <div class="blog-item position-relative bg-light rounded">
                     <img <?php echo 'src="uploads/' .
                         $row['blog_img'] .
                         '"'; ?> class="img-fluid w-100 rounded-top" alt="">
                     <span class="position-absolute px-4 py-3 bg-primary text-white rounded"
                         style="top: -28px; right: 20px;"><?php echo '<a class="text-white" href="blog.page.php?id=' .
-                            $row['blog_id'] .
+                            encoder($row['blog_id']) .
                             '">' .
                             substr($row['blog_title'], 0, 40) .
                             '...</a>'; ?></span>
@@ -55,7 +55,7 @@
                         style="margin-top: -75px;">
                         <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
                             <?php echo '                                        <a href="blog.page.php?id=' .
-                                $row['blog_id'] .
+                                encoder($row['blog_id']) .
                                 '" class="btn text-white">Lire plus</a>'; ?>
                         </div>
                         <div class="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">

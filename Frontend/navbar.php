@@ -180,4 +180,15 @@ include '../Backend/connexion.php';
         </nav>
     </div>
     </div>
+    <?php
+    function encoder ($value) {
+        $char =rand(100000000,999999999);
+        $id = $char.$value.$char;
+        return $id;
+    }
+    function decoder ($value){
+        $char = substr($value,9,-9);
+        return $char;
+    }
+?>
     <!-- Navbar End -->

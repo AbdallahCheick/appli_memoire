@@ -35,7 +35,7 @@ include 'header.php';
                 <div class="card-progress">
                     <small>Utilisateurs</small>
                     <div class="card-indicator">
-                        <div class="indicator one" style="width: 60%"></div>
+                        <div class="indicator one" style="width: <?php echo $nb_user; ?>%"></div>
                     </div>
                 </div>
             </div>
@@ -56,12 +56,12 @@ include 'header.php';
             <div class="card">
                 <div class="card-head">
                     <h2><?php echo $nb_proj; ?> </h2>
-                    <span class="las la-eye"></span>
+                    <span class="las la-briefcase"></span>
                 </div>
                 <div class="card-progress">
                     <small>Projets</small>
                     <div class="card-indicator">
-                        <div class="indicator two" style="width: 80%"></div>
+                        <div class="indicator two" style="width: <?php echo $nb_proj; ?>%"></div>
                     </div>
                 </div>
             </div>
@@ -84,12 +84,12 @@ include 'header.php';
             <div class="card">
                 <div class="card-head">
                     <h2><?php echo $nb_inv; ?> </h2>
-                    <span class="las la-shopping-cart"></span>
+                    <span class="las la-users"></span>
                 </div>
                 <div class="card-progress">
                     <small>Investisseurs</small>
                     <div class="card-indicator">
-                        <div class="indicator three" style="width: 65%"></div>
+                        <div class="indicator three" style="width: <?php echo $nb_inv; ?>%"></div>
                     </div>
                 </div>
             </div>
@@ -109,12 +109,12 @@ include 'header.php';
             <div class="card">
                 <div class="card-head">
                     <h2><?php echo $nb_blog; ?> </h2>
-                    <span class="las la-envelope"></span>
+                    <span class="lab la-blogger-b"></span>
                 </div>
                 <div class="card-progress">
                     <small>Blogs</small>
                     <div class="card-indicator">
-                        <div class="indicator four" style="width: 90%"></div>
+                        <div class="indicator four" style="width: <?php echo $nb_blog; ?>%"></div>
                     </div>
                 </div>
             </div>
@@ -163,12 +163,12 @@ include 'header.php';
             <div class="card">
                 <div class="card-head">
                     <h2><?php echo $nb_topic; ?> </h2>
-                    <span class="las la-envelope"></span>
+                    <span class="lab la-forumbee"></span>
                 </div>
                 <div class="card-progress">
                     <small>Forums</small>
                     <div class="card-indicator">
-                        <div class="indicator three" style="width: 60%"></div>
+                        <div class="indicator three" style="width: <?php echo $nb_topic; ?>%"></div>
                     </div>
                 </div>
             </div>

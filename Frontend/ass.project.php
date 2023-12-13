@@ -78,8 +78,16 @@
                             date('j F Y', strtotime($row['projet_date'])) .
                             '</p>
                                         </a>
-                                    </div>
-                                </div>
+                                        </div>';
+                                        $statut = $row['projet_statut'];
+                                        if ($statut == 0) {
+                                            echo '<div style="background:red; width:30%;height:3%;text-align:center"><b style="color:white;">Soumis</b></div>';
+                                        } elseif ($statut == 1) {
+                                            echo '<div style="background:orange; width:30%;height:3%;text-align:center"><b style="color:white;">Assigné</b></div>';
+                                        } else {
+                                            echo '<div style="background:green; width:30%;height:3%;text-align:center"><b style="color:white;">Validé</b></div>';
+                                        }
+                                    echo '</div>
                             </div>
                         </div>';
                     } while ($row = mysqli_fetch_assoc($result));

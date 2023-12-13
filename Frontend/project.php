@@ -63,14 +63,15 @@
                 } else {
                     do {
                         echo '
-                            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                            <div class="project-item">
-                                <div class="project-img">
+                            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s" >
+                            <div class="project-item" >
+                                <div class="project-img" >
+                                
                                     <img src="img/project-5.jpg" class="img-fluid w-100 rounded" alt="">
                                     <div class="project-content">
                                         <a href="project.page.php?id=' .
-                            $row['projet_id'] .
-                            '" class="text-center">
+                            encoder($row['projet_id']) .
+                            '" class="text-center" >
                                             <h4 class="text-secondary"> ' .
                             ucwords($row['projet_theme']) .
                             ' </h4>
@@ -79,9 +80,20 @@
                             '</p>
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>';
+                                    
+                                </div>';
+                                $statut = $row['projet_statut'];
+                                if ($statut == 0) {
+                                    echo '<div style="background:red; width:30%;height:3%;text-align:center"><b style="color:white;">Soumis</b></div>';
+                                } elseif ($statut == 1) {
+                                    echo '<div style="background:orange; width:30%;height:3%;text-align:center"><b style="color:white;">Assigné</b></div>';
+                                } else {
+                                    echo '<div style="background:green; width:30%;height:3%;text-align:center"><b style="color:white;">Validé</b></div>';
+                                }
+                            echo '</div>
+                            
+                        </div><br>
+                        ';
                     } while ($row = mysqli_fetch_assoc($result));
                 } ?>
 

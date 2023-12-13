@@ -24,7 +24,8 @@
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         die('SQL error');
     } else {
-        mysqli_stmt_bind_param($stmt, 's', $_GET['cat']);
+        $cat = decoder($_GET['cat']);
+        mysqli_stmt_bind_param($stmt, 's', $cat);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         $category = mysqli_fetch_assoc($result);
@@ -55,7 +56,7 @@ $sql = "select topic_id, topic_subject, topic_date, topic_cat, topic_by, userImg
         from topics, users, categories 
         where ";
 if (isset($_GET['cat'])) {
-    $sql .= 'topic_cat = ' . $_GET['cat'] . ' and ';
+    $sql .= 'topic_cat = ' . $cat . ' and ';
 }
 $sql .= "topics.topic_by = users.idUsers
         and topics.topic_cat = categories.cat_id
@@ -79,7 +80,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             '</a></li>
                             </ul>
                             <h2><a href="posts.php?topic=' .
-            $row['topic_id'] .
+            encoder($row['topic_id']) .
             '"><strong>' .
             ucwords($row['topic_subject']) .
             '</strong></a></h2>
@@ -91,7 +92,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                         </header>
                         <footer>
                             <a href="posts.php?topic=' .
-            $row['topic_id'] .
+            encoder($row['topic_id']) .
             '" class="more-link">Lire plus</a>
                             ';
         echo '</span>';
