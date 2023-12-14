@@ -12,7 +12,9 @@ if (isset($_SESSION['userId'])) {
 }
 ?>
 <!-- header start-->
-<?php include 'navbar.php'; ?>
+<?php include 'navbar.php';
+
+include 'navbar_body.php'; ?>
 
 <!-- header end-->
 <?php if (isset($_GET['error'])) {

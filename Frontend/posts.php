@@ -1,4 +1,6 @@
-<?php include 'navbar.php'; ?>
+<?php include 'navbar.php';
+
+include 'navbar_body.php'; ?>
 <link rel="stylesheet" href="css/style.forum.detail.css">
 <?php
 define('TITLE', 'Forum');

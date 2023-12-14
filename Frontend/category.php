@@ -1,10 +1,16 @@
 <?php
-include('navbar.php');
-
+include 'navbar.php';
 if (!isset($_SESSION['userId'])) {
     header('Location: login.php');
     exit();
+}else{
+    if($_SESSION['userLevel'] != 3){
+        header('Location: index.php');
+    }
 }
+include 'navbar_body.php';
+
+
 ?>
 <link rel="stylesheet" href="css/style.forum.css">
 <!-- Page Header Start -->
@@ -89,5 +95,5 @@ echo '</footer>
 }
 ?>
 
-<a href="create.category.php">Creer une nouvelle categorie</a>
+<a href="create.category.php" class="btn btn-primary rounded-pill py-3 px-5" style="margin-left: 45%;" >Creer une nouvelle categorie</a><br><br>
 <?php include('footer.php'); ?>

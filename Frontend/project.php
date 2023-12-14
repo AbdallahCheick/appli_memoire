@@ -1,6 +1,8 @@
     <!-- header start-->
     <?php
     include 'navbar.php';
+
+include 'navbar_body.php';
     if (isset($_GET['id'])) {
         $userid = $_GET['id'];
     } else {
@@ -8,7 +10,7 @@
     }
     ?>
     <!-- header end-->
-
+    
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5">

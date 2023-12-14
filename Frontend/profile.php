@@ -1,16 +1,19 @@
 <?php
-
-//if (!isset($_SESSION['userId'])) {
-//    header('Location: login.php');
-//    exit();
-//}
-
 include 'navbar.php';
+if (!isset($_SESSION['userId'])) {
+   header('Location: login.php');
+   exit();
+}
+
+
+
+include 'navbar_body.php';
 
 if (isset($_GET['id'])) {
     $userid = decoder($_GET['id']);
 } else {
-    $userid = $_SESSION['userId'];
+    if($_SESSION['userId'] !== null) {
+    $userid = $_SESSION['userId'];}
 }
 
 $sql = 'select * from users where idUsers = ' . $userid;

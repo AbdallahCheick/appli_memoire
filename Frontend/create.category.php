@@ -1,12 +1,16 @@
 <?php
 
-include('navbar.php');
-    
-    if(!isset($_SESSION['userId']))
-    {
-        header("Location: login.php");
-        exit();
+include 'navbar.php';
+if (!isset($_SESSION['userId'])) {
+    header('Location: login.php');
+    exit();
+}else{
+    if($_SESSION['userLevel'] != 3){
+        header('Location: index.php');
     }
+}
+include 'navbar_body.php';
+
     
 ?>  
 <body>

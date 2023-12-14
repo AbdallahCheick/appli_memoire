@@ -1,6 +1,6 @@
-<?php include 'navbar.php'; ?>
-<?php include '../Backend/connexion.php'; ?>
+<?php include 'navbar.php';
 
+include 'navbar_body.php'; ?>
 <span class="text-center">
     <?php if (isset($_GET['error'])) {
         if ($_GET['error'] == 'emptyfields') {

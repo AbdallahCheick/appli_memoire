@@ -1,11 +1,23 @@
     <!-- header start-->
     <?php
+    
     include 'navbar.php';
-    if (isset($_GET['id'])) {
-        $userid = $_GET['id'];
-    } else {
-        $userid = $_SESSION['userId'];
-    }
+    if (!isset($_SESSION['userId'])) {
+        header('Location: login.php');
+        exit();
+        }else{
+            if($_SESSION['userLevel'] != 2){
+                header('Location: project.php');
+            }
+        }
+    
+        if (isset($_GET['id'])) {
+            $userid = $_GET['id'];
+        } else {
+            $userid = $_SESSION['userId'];
+        }
+include 'navbar_body.php';
+
     ?>
     <!-- header end-->
 
@@ -69,7 +81,7 @@
                                     <img src="img/project-5.jpg" class="img-fluid w-100 rounded" alt="">
                                     <div class="project-content">
                                         <a href="project.page.php?id=' .
-                            $row['projet_id'] .
+                            encoder($row['projet_id']) .
                             '" class="text-center">
                                             <h4 class="text-secondary"> ' .
                             ucwords($row['projet_theme']) .

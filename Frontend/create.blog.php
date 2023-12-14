@@ -1,11 +1,13 @@
 <?php
 include 'navbar.php';
-
 if (!isset($_SESSION['userId'])) {
     header('Location: login.php');
     exit();
 }
+
+include 'navbar_body.php';
 ?>
+
 
 <span class="text-center">
     <?php if (isset($_GET['error'])) {

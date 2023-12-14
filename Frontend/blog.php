@@ -1,5 +1,9 @@
 <!-- header start-->
-<?php include 'navbar.php'; ?>
+
+<?php
+include 'navbar.php';
+
+include 'navbar_body.php'; ?>
 <!-- header end-->
 
 
@@ -87,7 +91,7 @@
                     </div>
                     <div class="blog-coment d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
                         <a href="" class="text-white"></a>
-                        <a href="" class="text-white"><small> →</small></a>
+                        <a href="../Backend" class="text-white"><small> <i class="fa fa-trash" aria-hidden="true"></i>Supprimer</small></a>
                     </div>
                 </div>
             </div>

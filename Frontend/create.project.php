@@ -1,17 +1,18 @@
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-</head>
 <?php
 include 'navbar.php';
-
-if (!isset($_SESSION['userId'])) {
-    header('Location: login.php');
+if(!isset($_SESSION['userId'])){
+    header('Location:index.php');
     exit();
+}else{
+    if($_SESSION['userLevel']==2){
+        header('Location:ass.project.php');
+        exit();
+    }
 }
+include 'navbar_body.php';
+
+
 ?><br><br>
 
 <?php if (isset($_GET['error'])) {

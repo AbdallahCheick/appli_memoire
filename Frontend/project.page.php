@@ -1,4 +1,6 @@
-    <?php include 'navbar.php'; ?>
+    <?php include 'navbar.php';
+
+include 'navbar_body.php'; ?>
     <?php
     if (!isset($_SESSION['userId'])) {
         header('Location: login.php');
@@ -81,11 +83,11 @@
                     <img style="width: 15%; height: 15%;" src="uploads/<?php echo $row[
                         'userImg'
                     ]; ?>" alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle">
-                    <h3 class="text-black">Auteur: <?php echo ucwords(
+                    <h3 class="text-black">Auteur: <?php echo '<a href="profile.php?id='.encoder($row['idUsers']).'" >'. ucwords(
                         $row['uidUsers']
-                    ); ?></h3>
+                    ).' </a>'; ?></h3>
                     <p><?php echo ucwords($row['bio']); ?></p>
-                    <?php if($_SESSION['userLevel'] ==2){?>
+                    <?php if($_SESSION['userLevel'] ==2 && $row['projet_statut'] != 2){?>
                     <p><a href="../Backend/submit.project.back.php?statut=2&id=<?php echo $row['projet_id']; ?>" class="btn btn-success py-3 px-5 ">Valider le projet</a></p>
                     <?php } ?>
                 </div>

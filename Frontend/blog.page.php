@@ -1,12 +1,18 @@
 <?php
+if(!isset($_GET['id'])){
+    header('location: index.php');
+}
 include 'navbar.php';
-
 if (isset($_GET['id'])) {
     $blogId = decoder($_GET['id']);
-} else {
-    header('Location: index.php');
-    exit();
+    if($blogId == null){
+        header('location: 404.php');
+    }
+
 }
+include 'navbar_body.php';
+
+
 ?>
 
 <body>
