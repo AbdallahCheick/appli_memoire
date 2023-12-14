@@ -40,7 +40,7 @@
     <div class="container-fluid bg-primary">
         <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                <a href="index.php" class="navbar-brand">
+                <a href="index" class="navbar-brand">
                     <h1 class="text-white fw-bold d-block">Ent<span class="text-secondary">Finc</span> </h1>
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
@@ -49,19 +49,19 @@
                 </button>
                 <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
                     <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                        <a href="index.php" class="nav-item nav-link ">Accueil</a>
-                        <!--<a href="service.php" class="nav-item nav-link">Services</a>-->
+                        <a href="index" class="nav-item nav-link ">Accueil</a>
+                        <!--<a href="service" class="nav-item nav-link">Services</a>-->
 
                         <?php if (isset($_SESSION['userId'])) {
                             echo '                        <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blogs</a>
                             <div class="dropdown-menu rounded">
-                                <a href="blog.php" class="dropdown-item">Liste des blogs</a>
-                                <a href="create.blog.php" class="dropdown-item">Creer un blog</a>
+                                <a href="blog" class="dropdown-item">Liste des blogs</a>
+                                <a href="create.blog" class="dropdown-item">Creer un blog</a>
                             </div>
                         </div>';
                         } else {
-                            echo '<a href="blog.php" class="nav-item nav-link">Blogs</a>';
+                            echo '<a href="blog" class="nav-item nav-link">Blogs</a>';
                         } ?>
 
 
@@ -69,25 +69,25 @@
                             echo '                        <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Forums</a>
                             <div class="dropdown-menu rounded">
-                                <a href="forum.php" class="dropdown-item">Liste des forums</a>
-                                <a href="create.forum.php" class="dropdown-item">Creer un forum</a>
+                                <a href="forum" class="dropdown-item">Liste des forums</a>
+                                <a href="create.forum" class="dropdown-item">Creer un forum</a>
                             </div>
                         </div>';
                         } else {
-                            echo '<a href="forum.php" class="nav-item nav-link">Forums</a>';
+                            echo '<a href="forum" class="nav-item nav-link">Forums</a>';
                         } ?>
                         <?php if (isset($_SESSION['userId'])) {
                             if ($_SESSION['userLevel'] == 1) {
                                 echo '                        <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projet</a>
                             <div class="dropdown-menu rounded">
-                                <a href="project.php" class="dropdown-item">Liste des projets</a>
-                                <a href="create.project.php" class="dropdown-item">Soummettre un projet</a>
+                                <a href="project" class="dropdown-item">Liste des projets</a>
+                                <a href="create.project" class="dropdown-item">Soummettre un projet</a>
                             </div>
                         </div>
                         ';
                             } else {
-                                echo '<a href="ass.project.php" class="nav-item nav-link">Projet Assigné</a>
+                                echo '<a href="ass.project" class="nav-item nav-link">Projet Assigné</a>
                         ';
                             }
                         } else {
@@ -97,19 +97,19 @@
                         <!--<div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded">
-                                <a href="blog.php" class="dropdown-item">Our Blog</a>
-                                <a href="team.php" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                                <a href="404.php" class="dropdown-item">404 Page</a>
+                                <a href="blog" class="dropdown-item">Our Blog</a>
+                                <a href="team" class="dropdown-item">Our Team</a>
+                                <a href="testimonial" class="dropdown-item">Testimonial</a>
+                                <a href="404" class="dropdown-item">404 Page</a>
                             </div>
                         </div>-->
-                        <a href="contact.php" class="nav-item nav-link">Contact</a>
+                        <a href="contact" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
 
                 <div class="d-flex align-items-center justify-content-center ms-4 ">
                     <?php if (isset($_SESSION['userId'])) {
-                        echo '                                <a href="profile.php" class="position-relative ">
+                        echo '                                <a href="profile" class="position-relative ">
                         <i class="bi bi-person-fill bi-2x text-white" style="height: 200px; width:200px"></i>
                         <span class="text-white">' .
                             $_SESSION['userUid'] .
@@ -120,7 +120,7 @@
                     } else {
                         echo ' <div class="d-none d-xl-flex flex-shirink-0">
                             <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                                <a href="login.php" class="position-relative animated tada infinite">
+                                <a href="login" class="position-relative animated tada infinite">
                                     <i class="bi bi-person-fill bi-2x text-white" style="height: 200px; width:200px"></i>
                                     <span class="text-white">S\'inscrire / Se connecter</span>
                                     <div class="position-absolute" style="top: -7px; left: 20px;">

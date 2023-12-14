@@ -3,7 +3,7 @@
         <div class="container pt-5 pb-4">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <a href="index.php">
+                    <a href="index">
                         <h1 class="text-white fw-bold d-block">Ent<span class="text-secondary">Finc</span> </h1>
                     </a>
                     <p class="mt-4 text-light">Fondée en 2023, notre plateforme est née de la passion commune de notre
@@ -55,8 +55,12 @@
             <hr class="text-light mt-5 mb-4">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <span class="text-light"><a href="#" class="text-secondary"><i
-                                class="fas fa-copyright text-secondary me-2"></i>Cheick Abdallah Tanagueda</a>
+                    <span class="text-light"><span href="#" class="text-secondary"><i
+                                class="fas fa-copyright text-secondary me-2"></i>Cheick Abdallah Tanagueda</span>
+                    </span>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <span class="text-light"><span href="#" class="text-secondary"> <?php $date = new DateTime();$year = $date->format('Y'); echo $year; ?> </span>
                     </span>
                 </div>
 

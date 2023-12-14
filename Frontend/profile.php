@@ -1,7 +1,7 @@
 <?php
 include 'navbar.php';
 if (!isset($_SESSION['userId'])) {
-   header('Location: login.php');
+   header('Location: login');
    exit();
 }
 
@@ -59,7 +59,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
         do {
             echo '<div class="col-sm-4" style="padding-bottom: 30px;">
                                         <div class="card user-blogs">
-                                            <a href="blog.page.php?id=' .
+                                            <a href="blog.page?id=' .
                 encoder($row['blog_id']) .
                 '">
                                             <img class="card-img-top" src="uploads/' .
@@ -113,7 +113,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
         do {
             echo '<div class="col-sm-4" style="padding-bottom: 30px;">
                                         <div class="card user-blogs">
-                                            <a href="posts.php?topic=' .
+                                            <a href="posts?topic=' .
                 encoder($row['topic_id']) .
                 '">
                                             <img class="card-img-top" src="img/cover_forum.png" alt="Card image cap" width="150px" height="150 ">
@@ -162,7 +162,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
         do {
             echo '<div class="col-sm-4" style="padding-bottom: 30px;">
                                         <div class="card user-blogs">
-                                            <a href="project.page.php?id=' .
+                                            <a href="project.page?id=' .
                 encoder($row['projet_id']) .
                 '">
                                             <img class="card-img-top" src="img/project-5.jpg" alt="Card image cap">

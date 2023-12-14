@@ -50,7 +50,7 @@ include 'navbar_body.php'; ?>
                         $row['blog_img'] .
                         '"'; ?> class="img-fluid w-100 rounded-top" alt="">
                     <span class="position-absolute px-4 py-3 bg-primary text-white rounded"
-                        style="top: -28px; right: 20px;"><?php echo '<a class="text-white" href="blog.page.php?id=' .
+                        style="top: -28px; right: 20px;"><?php echo '<a class="text-white" href="blog.page?id=' .
                             encoder($row['blog_id']) .
                             '">' .
                             substr($row['blog_title'], 0, 40) .
@@ -58,7 +58,7 @@ include 'navbar_body.php'; ?>
                     <div class="blog-btn d-flex justify-content-between position-relative px-3"
                         style="margin-top: -75px;">
                         <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-                            <?php echo '                                        <a href="blog.page.php?id=' .
+                            <?php echo '                                        <a href="blog.page?id=' .
                                 encoder($row['blog_id']) .
                                 '" class="btn text-white">Lire plus</a>'; ?>
                         </div>

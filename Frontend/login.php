@@ -7,7 +7,7 @@ function strip_bad_chars($input)
 }
 
 if (isset($_SESSION['userId'])) {
-    header('Location: index.php');
+    header('Location: index');
     exit();
 }
 ?>
@@ -29,7 +29,7 @@ include 'navbar_body.php'; ?>
     } elseif ($_GET['error'] == 'wrongpwd') {
         echo '<div class="alert alert-danger" role="alert">
                             <strong>Erreur: </strong>Mauvais mot de passe - 
-                            <a href="reset-pwd.php" class="alert-link">Mot de passe oublié?</a>
+                            <a href="reset-pwd" class="alert-link">Mot de passe oublié?</a>
                                   </div>';
     } elseif ($_GET['error'] == 'sqlerror') {
         echo '<div class="alert alert-danger" role="alert">
@@ -90,7 +90,7 @@ include 'navbar_body.php'; ?>
                                         <strong>Signup Successful</strong> Enregistrerment reussis connecter vous
                                       </div>';
 } ?>
-<!--<form method="post" action="../Backend/login.back.php">
+<!--<form method="post" action="../Backend/login.back">
     <input type="text" name="user" id="user" placeholder="nom d'utilisateur">
     <input type="password" name="pwd" id="pwd" placeholder="mot de passe">
     <input type="submit" name="sub_log" value="valider">

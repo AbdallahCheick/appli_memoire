@@ -45,7 +45,7 @@ include '../Backend/connexion.php';
 </head>
 <?php
     if(isset($_SESSION['userLevel']) && $_SESSION['userLevel'] ==3){
-        header('Location: admin/dashboad.php');
+        header('Location: admin/dashboad');
         exit();
     }
 ?>

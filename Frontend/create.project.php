@@ -2,11 +2,11 @@
 <?php
 include 'navbar.php';
 if(!isset($_SESSION['userId'])){
-    header('Location:index.php');
+    header('Location:index');
     exit();
 }else{
     if($_SESSION['userLevel']==2){
-        header('Location:ass.project.php');
+        header('Location:ass.project');
         exit();
     }
 }
@@ -77,7 +77,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             'cette categorie</h5>';
     } else {
          ?>
-<form method="post" action="../Backend/create.project.back.php" enctype="multipart/form-data">
+<form method="post" action="../Backend/create.project.back" enctype="multipart/form-data">
     <div class="col-lg-6  fadeIn" style="margin-left: 25%;">
         <h1 style="margin-left: 30%;">Soumission de projet</h1>
         <div class="p-5 rounded contact-form">

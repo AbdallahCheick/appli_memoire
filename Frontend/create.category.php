@@ -2,11 +2,11 @@
 
 include 'navbar.php';
 if (!isset($_SESSION['userId'])) {
-    header('Location: login.php');
+    header('Location: login');
     exit();
 }else{
     if($_SESSION['userLevel'] != 3){
-        header('Location: index.php');
+        header('Location: index');
     }
 }
 include 'navbar_body.php';
@@ -38,7 +38,7 @@ include 'navbar_body.php';
                                         ?>
                                         </span>
     <br><br>
-<form method="post" action="../Backend/create.category.back.php">
+<form method="post" action="../Backend/create.category.back">
     <div class="col-lg-6  fadeIn" style="margin-left: 25%;">
         <h1 style="margin-left: 30%;">Création de Categories</h1>
         <div class="p-5 rounded contact-form">

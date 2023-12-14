@@ -8,7 +8,7 @@ define('TITLE', 'Forum');
 if (isset($_GET['topic'])) {
     $topic = decoder($_GET['topic']);
 } else {
-    header('Location: index.php');
+    header('Location: index');
     exit();
 }
 ?>
@@ -20,7 +20,7 @@ if (isset($_GET['topic'])) {
         <h1 class="display-2 text-white mb-4 animated slideInDown">Les Forums</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="index.php">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="index">Accueil</a></li>
                 <li class="breadcrumb-item"><a href="#">Forums</a></li>
                 <li class="breadcrumb-item" aria-current="page">Liste des forums</li>
             </ol>
@@ -109,7 +109,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                             </h3></div>
                             <div class="pt-5">
 
-                                <p>Categories: <a href="forum.php?cat=' .
+                                <p>Categories: <a href="forum?cat=' .
                                     encoder($forum['cat_id']) .
                                     '">' .
                                     $forum['cat_name'] .
@@ -129,7 +129,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                                 '" >
                 </div>
                 <div class="comment-body">
-                <h3> <a href="profile.php?id=' .
+                <h3> <a href="profile?id=' .
                                 encoder($row['idUsers']) .
                                 '">' .
                                 $row['uidUsers'] .
@@ -174,7 +174,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                                     <?php if (isset($_SESSION['userId'])) {
                                         echo '<input type="submit" value="Envoyer" name="submit_reply" class="btn btn-primary py-3 px-5">';
                                     } else {
-                                        echo '<a href="login.php" class="btn btn-primary">Envoyer</a>';
+                                        echo '<a href="login" class="btn btn-primary">Envoyer</a>';
                                     } ?>
                                 </div>
 
@@ -189,7 +189,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                             class="img-fluid mb-4 w-50 rounded-circle">
                         <h3 class="text-black"> <?php echo $nom; ?></h3>
                         <p><?php echo $bio; ?></p>
-                        <!--<p><a href="profile.php" class="btn btn-primary btn-md">Visiter le profil</a></p>-->
+                        <!--<p><a href="profile" class="btn btn-primary btn-md">Visiter le profil</a></p>-->
                     </div>
 
                     <div class="sidebar-box">

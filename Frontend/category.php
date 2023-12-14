@@ -1,11 +1,11 @@
 <?php
 include 'navbar.php';
 if (!isset($_SESSION['userId'])) {
-    header('Location: login.php');
+    header('Location: login');
     exit();
 }else{
     if($_SESSION['userLevel'] != 3){
-        header('Location: index.php');
+        header('Location: index');
     }
 }
 include 'navbar_body.php';
@@ -19,7 +19,7 @@ include 'navbar_body.php';
         <h1 class="display-2 text-white mb-4 animated slideInDown">Les Categories</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="index.php">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="index">Accueil</a></li>
                 <li class="breadcrumb-item" aria-current="page">Categories</li>
             </ol>
         </nav>
@@ -59,7 +59,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                         $row['cat_description'] .
                         '</a></li>
                     </ul>
-                    <h2><a href="forum.php?cat=' .
+                    <h2><a href="forum?cat=' .
                     encoder($row['cat_id']) .
                     '">
                           <strong>' .
@@ -72,7 +72,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                 <footer>';
                 if ($_SESSION['userLevel'] == 3){
                 echo'
-                <a href="../Backend/delete.category.back.php?id=' .
+                <a href="../Backend/delete.category.back?id=' .
                 $row['cat_id'] .
                 '&page=category" class="more-link"> <i class="bi bi-trash3-fill" aria-hidden="true" >Suprimer la catégorie</i></a>
                     ';
@@ -95,5 +95,5 @@ echo '</footer>
 }
 ?>
 
-<a href="create.category.php" class="btn btn-primary rounded-pill py-3 px-5" style="margin-left: 45%;" >Creer une nouvelle categorie</a><br><br>
+<a href="create.category" class="btn btn-primary rounded-pill py-3 px-5" style="margin-left: 45%;" >Creer une nouvelle categorie</a><br><br>
 <?php include('footer.php'); ?>

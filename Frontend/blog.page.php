@@ -1,12 +1,12 @@
 <?php
 if(!isset($_GET['id'])){
-    header('location: index.php');
+    header('location: index');
 }
 include 'navbar.php';
 if (isset($_GET['id'])) {
     $blogId = decoder($_GET['id']);
     if($blogId == null){
-        header('location: 404.php');
+        header('location: 404');
     }
 
 }
@@ -60,11 +60,11 @@ include 'navbar_body.php';
                     <img style="width: 15%; height: 15%;" src="uploads/<?php echo $row[
                         'userImg'
                     ]; ?>" alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle">
-                    <h3 class="text-black">Auteur:<a href="profile.php?id=<?php echo encoder($row[
+                    <h3 class="text-black">Auteur:<a href="profile?id=<?php echo encoder($row[
                         'idUsers'
                     ]); ?>"> <?php echo ucwords($row['uidUsers']); ?> </a></h3>
                     <p><?php echo ucwords($row['bio']); ?></p>
-                    <!--<p><a href=" profile.php" class="btn btn-primary btn-md">Visiter le profil</a></p>-->
+                    <!--<p><a href=" profile" class="btn btn-primary btn-md">Visiter le profil</a></p>-->
                 </div>
             </div>
         </div>

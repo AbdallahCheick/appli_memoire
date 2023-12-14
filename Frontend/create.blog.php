@@ -1,7 +1,7 @@
 <?php
 include 'navbar.php';
 if (!isset($_SESSION['userId'])) {
-    header('Location: login.php');
+    header('Location: login');
     exit();
 }
 
@@ -24,7 +24,7 @@ include 'navbar_body.php';
 </span>
 <br><br>
 
-<form action="../Backend/create.blog.back.php" enctype="multipart/form-data" method="post">
+<form action="../Backend/create.blog.back" enctype="multipart/form-data" method="post">
     <div class="col-lg-6  fadeIn" style="margin-left: 25%;">
         <h1 style="margin-left: 30%;">Création de Blog</h1>
         <div class="p-5 rounded contact-form">

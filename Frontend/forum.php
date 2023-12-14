@@ -10,7 +10,7 @@ include 'navbar_body.php'; ?>
         <h1 class="display-2 text-white mb-4 animated slideInDown">Les Forums</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="index.php">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="index">Accueil</a></li>
                 <li class="breadcrumb-item"><a href="#">Forums</a></li>
                 <li class="breadcrumb-item" aria-current="page">Liste des forums</li>
             </ol>
@@ -36,8 +36,8 @@ include 'navbar_body.php'; ?>
 <br><br><br>
 <h5 class="border-bottom border-gray pb-2 mb-0">
     <?php if (isset($_GET['cat'])) {
-        echo '<a href="forum.php">Forums</a>
-                        / <a href="category.php">Categorie<a> / <span style="color: #709fea ">' .
+        echo '<a href="forum">Forums</a>
+                        / <a href="category">Categorie<a> / <span style="color: #709fea ">' .
             ucwords($category['cat_name']) .
             '</span>';
     } else {
@@ -81,7 +81,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             $row['cat_name'] .
             '</a></li>
                             </ul>
-                            <h2><a href="posts.php?topic=' .
+                            <h2><a href="posts?topic=' .
             encoder($row['topic_id']) .
             '"><strong>' .
             ucwords($row['topic_subject']) .
@@ -93,7 +93,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             ' </p>
                         </header>
                         <footer>
-                            <a href="posts.php?topic=' .
+                            <a href="posts?topic=' .
             encoder($row['topic_id']) .
             '" class="more-link">Lire plus</a>
                             ';

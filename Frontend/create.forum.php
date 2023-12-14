@@ -27,7 +27,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
     } else {
          ?>
 <br><br>
-<form method="post" action="../Backend/create.forum.back.php">
+<form method="post" action="../Backend/create.forum.back">
     <div class="col-lg-6  fadeIn" style="margin-left: 25%;">
         <h1 style="margin-left: 30%;">Création de Forum</h1>
         <div class="p-5 rounded contact-form">

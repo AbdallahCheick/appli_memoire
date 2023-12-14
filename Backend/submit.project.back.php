@@ -22,7 +22,7 @@ if (isset($_GET['statut'])&& isset($_GET['id'])) {
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
 
-        header('Location: ../Frontend/project.page.php?id='.$id.'&edit=success');
+        header('Location: ../Frontend/project.page.php?id='.encoder($id).'&edit=success');
         exit();
     }
 } else {

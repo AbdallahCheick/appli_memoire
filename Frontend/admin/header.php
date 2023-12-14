@@ -36,7 +36,7 @@ if (!isset($_SESSION['userId'])) {
         </div>
 
         <div class="side-content">
-            <a href="profile.admin.php">
+            <a href="profile.admin">
                 <div class="profile">
 
                     <div class="profile-img bg-img" style="background-image: url(../uploads/<?php echo $_SESSION[
@@ -51,7 +51,7 @@ if (!isset($_SESSION['userId'])) {
             <div class="side-menu">
                 <ul>
                     <li>
-                        <a href="dashboad.php" class="<?php if ($page == 1) {
+                        <a href="dashboad" class="<?php if ($page == 1) {
                             echo 'active';
                         } else {
                             echo '';
@@ -61,7 +61,7 @@ if (!isset($_SESSION['userId'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="admin.admin.php" class="<?php if ($page == 2) {
+                        <a href="admin.admin" class="<?php if ($page == 2) {
                             echo 'active';
                         } else {
                             echo '';
@@ -71,7 +71,7 @@ if (!isset($_SESSION['userId'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="users.admin.php" class="<?php if ($page == 3) {
+                        <a href="users.admin" class="<?php if ($page == 3) {
                             echo 'active';
                         } else {
                             echo '';
@@ -81,7 +81,7 @@ if (!isset($_SESSION['userId'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="invest.admin.php" class="<?php if (
+                        <a href="invest.admin" class="<?php if (
                             $page == 4
                         ) {
                             echo 'active';
@@ -93,7 +93,7 @@ if (!isset($_SESSION['userId'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="project.admin.php" class="<?php if (
+                        <a href="project.admin" class="<?php if (
                             $page == 5
                         ) {
                             echo 'active';
@@ -105,7 +105,7 @@ if (!isset($_SESSION['userId'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="blogs.admin.php" class="<?php if ($page == 6) {
+                        <a href="blogs.admin" class="<?php if ($page == 6) {
                             echo 'active';
                         } else {
                             echo '';
@@ -115,7 +115,7 @@ if (!isset($_SESSION['userId'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="forum.admin.php" class="<?php if ($page == 7) {
+                        <a href="forum.admin" class="<?php if ($page == 7) {
                             echo 'active';
                         } else {
                             echo '';
@@ -141,10 +141,10 @@ if (!isset($_SESSION['userId'])) {
                 <div class="header-menu">
 
                     <div class="user">
-                        <a href="profile.admin.php">
+                        <a href="profile.admin">
                             <div class="bg-img" style="background-image: url(../uploads/<?php echo $_SESSION[
                                 'userImg'
-                            ]; ?>)"></div><a href="profile.admin.php">
+                            ]; ?>)"></div><a href="profile.admin">
 
                                 <span class="las la-power-off"></span>
                                 <span><a href="../../Backend/logout.admin.back.php"

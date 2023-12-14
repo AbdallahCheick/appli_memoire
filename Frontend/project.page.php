@@ -3,14 +3,14 @@
 include 'navbar_body.php'; ?>
     <?php
     if (!isset($_SESSION['userId'])) {
-        header('Location: login.php');
+        header('Location: login');
         exit();
     }
 
     if (isset($_GET['id'])) {
         $projetId = decoder($_GET['id']);
     } else {
-        header('Location: index.php');
+        header('Location: index');
         exit();
     }
     ?>
@@ -38,7 +38,7 @@ include 'navbar_body.php'; ?>
             <h1 class="display-2 text-white mb-4 animated slideInDown">Projet</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="project.php">Projet</a></li>
+                    <li class="breadcrumb-item"><a href="project">Projet</a></li>
                     <li class="breadcrumb-item" aria-current="page"> <?php echo $row[
                         'projet_theme'
                     ]; ?> </li>
@@ -72,7 +72,7 @@ include 'navbar_body.php'; ?>
                 </summary>
                 <p><?php echo nl2br($row['projet_descr']); ?></p><br><br>
                 <?php if (!empty($row['file'])) {
-        echo '<a href="download.php?file=' .
+        echo '<a href="download?file=' .
             $row['projet_file'] .
             '" class="btn btn-primary py-3 px-5" >Télécharger le projet </a>';
     } ?>
@@ -83,7 +83,7 @@ include 'navbar_body.php'; ?>
                     <img style="width: 15%; height: 15%;" src="uploads/<?php echo $row[
                         'userImg'
                     ]; ?>" alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle">
-                    <h3 class="text-black">Auteur: <?php echo '<a href="profile.php?id='.encoder($row['idUsers']).'" >'. ucwords(
+                    <h3 class="text-black">Auteur: <?php echo '<a href="profile?id='.encoder($row['idUsers']).'" >'. ucwords(
                         $row['uidUsers']
                     ).' </a>'; ?></h3>
                     <p><?php echo ucwords($row['bio']); ?></p>

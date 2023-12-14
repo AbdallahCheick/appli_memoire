@@ -3,11 +3,11 @@
     
     include 'navbar.php';
     if (!isset($_SESSION['userId'])) {
-        header('Location: login.php');
+        header('Location: login');
         exit();
         }else{
             if($_SESSION['userLevel'] != 2){
-                header('Location: project.php');
+                header('Location: project');
             }
         }
     
@@ -80,7 +80,7 @@ include 'navbar_body.php';
                                 <div class="project-img">
                                     <img src="img/project-5.jpg" class="img-fluid w-100 rounded" alt="">
                                     <div class="project-content">
-                                        <a href="project.page.php?id=' .
+                                        <a href="project.page?id=' .
                             encoder($row['projet_id']) .
                             '" class="text-center">
                                             <h4 class="text-secondary"> ' .

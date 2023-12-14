@@ -13,7 +13,7 @@ include 'navbar_body.php';
 define('TITLE', 'modifier le profil');
 
 if (!isset($_SESSION['userId'])) {
-    header('Location: login.php');
+    header('Location: login');
     exit();
 }
 ?>
@@ -22,7 +22,7 @@ if (!isset($_SESSION['userId'])) {
     <div>
         <img class="profile-img" id="blah" src="#" style="margin-left: 45%;" width="150" height="150" alt="">
     </div>
-    <form form action="../Backend/profile.update.back.php" method='post' enctype="multipart/form-data">
+    <form form action="../Backend/profile.update.back" method='post' enctype="multipart/form-data">
         <label class="btn btn-primary">
             Changer la photo de profil <input type="file" id="imgInp" name='dp' hidden>
         </label>

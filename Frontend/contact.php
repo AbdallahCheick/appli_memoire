@@ -11,7 +11,7 @@ include 'navbar_body.php'; ?>
         <h1 class="display-2 text-white mb-4 animated slideInDown">Nous contacter</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="index.php">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="index">Accueil</a></li>
                 <li class="breadcrumb-item" aria-current="page">Contact</li>
             </ol>
         </nav>
