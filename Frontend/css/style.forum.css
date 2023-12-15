@@ -132,3 +132,21 @@ ul.tags li a:hover {
 .more-link:hover {
   background: #004d4d;
 }
+
+.sup-link {
+  text-align: center;
+  background: rgb(255, 13, 13);
+  color: #fff !important;
+  padding: 0.5em 0.75em;
+  display: inline-block;
+  float: right;
+}
+@media (max-width: 480px) {
+  .sup-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+.sup-link:hover {
+  background: rgb(105, 3, 3);
+}

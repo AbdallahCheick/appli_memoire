@@ -42,10 +42,10 @@ if (isset($_POST['sub_log'])) {
                     $_SESSION['coverImg'] = $row['coverImg'];
 
                     if($_SESSION['userLevel'] ==3){
-                        header('Location: ../Frontend/admin/dashboad.php?');
+                        header('Location: ../Frontend/admin/dashboad');
                         exit();
                     }
-                    header('Location: ../Frontend/index.php?login=success');
+                    header('Location: ../Frontend/index?login=success');
                     exit();
                 } else {
                     header('Location: ../Frontend/login.php?error=wrongpwd');

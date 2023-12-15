@@ -123,7 +123,7 @@ include 'header.php';
                         <th><span class="las la-sort"></span> EMAIL</th>
                         <th><span class="las la-sort"></span> GENRE</th>
                         <th><span class="las la-sort"></span> RÔLE</th>
-                        <th><span class="las la-sort"></span> PROJET ASSIGNE</th>
+                        <th><span class="las la-sort"></span> NBRE PROJET ASSIGNE</th>
                         <th><span class="las la-sort"></span> ACTIONS</th>
                     </tr>
                 </thead>

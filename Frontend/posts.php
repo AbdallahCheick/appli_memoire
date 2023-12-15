@@ -111,7 +111,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 
                                 <p>Categories: <a href="forum?cat=' .
                                     encoder($forum['cat_id']) .
-                                    '">' .
+                                    '&post='.$forum['topic_subject'].'&page=post?id='.encoder($forum['topic_id']).'">' .
                                     $forum['cat_name'] .
                                     '</a> Crée le  : <span class="date">' .
                                     date(

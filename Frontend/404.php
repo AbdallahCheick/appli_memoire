@@ -33,7 +33,7 @@ include 'navbar_body.php'; ?>
                     <h1 class="mb-4">Page non trouvée</h1>
                     <p class="mb-4">Nous sommes désolés, la page que vous recherchez n'existe pas 
                         sur notre site ! Peut-être aller sur notre page d'accueil ou essayer d'utiliser une recherche ?</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="">Go Back To Home</a>
+                    <!--<a class="btn btn-primary rounded-pill py-3 px-5" href="">Go Back To Home</a>-->
                 </div>
             </div>
         </div>

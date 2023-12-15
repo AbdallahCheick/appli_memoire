@@ -33,8 +33,9 @@ include 'navbar_body.php'; ?>
         </div>
         <div class="row g-5 justify-content-center">
             <?php
-            $sql = "select * from blogs, users 
-                            where blogs.blog_by = users.idUsers";
+            $sql = "select * from blogs, users
+                            where blogs.blog_by = users.idUsers
+                            ORDER BY blogs.blog_date DESC";
             $stmt = mysqli_stmt_init($conn);
 
             if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -44,7 +45,7 @@ include 'navbar_body.php'; ?>
                 $result = mysqli_stmt_get_result($stmt);
 
                 while ($row = mysqli_fetch_assoc($result)) { ?>
-            <div class="col-lg-6 col-xl-4 wow fadeIn"> 
+            <div class="col-lg-6 col-xl-4 wow fadeIn">
                 <div class="blog-item position-relative bg-light rounded">
                     <img <?php echo 'src="uploads/' .
                         $row['blog_img'] .
@@ -91,8 +92,16 @@ include 'navbar_body.php'; ?>
                     </div>
                     <div class="blog-coment d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
                         <a href="" class="text-white"></a>
-                        <a href="../Backend" class="text-white"><small> <i class="fa fa-trash" aria-hidden="true"></i>Supprimer</small></a>
-                    </div>
+                        <?php 
+                        if(isset($_SESSION['userId'])){
+                        if($_SESSION['userId'] == $row['idUsers']){ ?>
+                        <a href="../Backend/delete.blog.back.php?id=<?php echo encoder($row['blog_id']) ?>&page=user"  class="text-white"><small> <i class="fa fa-trash" aria-hidden="true"></i> Supprimer</small></a>
+                        <?php }else{?>
+                            <a href="blog.page?id=<?php echo encoder($row['blog_id']); ?>"  class="text-white"><small> -></small></a>
+                        <?php }}else{ ?>
+                        <a href="blog.page?id=<?php echo encoder($row['blog_id']); ?>"  class="text-white"><small> -></small></a>
+                        <?php }?>
+                        </div>
                 </div>
             </div>
             <?php }

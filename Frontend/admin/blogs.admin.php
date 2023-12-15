@@ -127,9 +127,9 @@ include 'header.php';
                         </td>
                         <td>
                             <div class="actions">
-                                <a href="../../Backend/delete.blog.back.php?id=<?php echo $row[
+                                <a href="../../Backend/delete.blog.back.php?id=<?php echo encoder($row[
                                     'blog_id'
-                                ]; ?>&page=blog" class="delBtn">suprimer</a> <br><br>
+                                ]); ?>&page=admin" class="delBtn">suprimer</a> <br><br>
                             </div>
                         </td>
                     </tr>

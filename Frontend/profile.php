@@ -68,12 +68,22 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                                             <div class="card-block p-2">
                                               <p class="card-title">' .
                 ucwords($row['blog_title']) .
-                '</p>
+                '</p></a>
                                              <p class="card-text"><small class="text-muted">' .
                 date('j F Y', strtotime($row['blog_date'])) .
-                '</small></p>
+                '</small>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                <small class="text-muted">';?>
+                    
+                <?php
+                    if($_SESSION['userId'] == $userid){ 
+                    echo '<a href="../Backend/delete.blog.back.php?id='.encoder($row['blog_id']).'&page=profile" > <i class="fa fa-trash" aria-hidden="true"></i>Supprimer</a>';
+                    }?>
+                 
+                
+                <?php echo '</small></p>
+                
                                             </div>
-                                            </a>
+                                            
                                           </div>
                                           </div>';
         } while ($row = mysqli_fetch_assoc($result));

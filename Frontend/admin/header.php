@@ -146,9 +146,9 @@ if (!isset($_SESSION['userId'])) {
                                 'userImg'
                             ]; ?>)"></div><a href="profile.admin">
 
-                                <span class="las la-power-off"></span>
+                                
                                 <span><a href="../../Backend/logout.admin.back.php"
-                                        class="nav-item nav-link text-white">Déconnexion</a></span>
+                                        class="nav-item nav-link text-white logBtn"><span class="las la-power-off" style="font-size: 20px;"></span>Déconnexion</a></span>
                     </div>
                 </div>
             </div>

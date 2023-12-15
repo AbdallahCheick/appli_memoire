@@ -35,11 +35,15 @@ include 'navbar_body.php'; ?>
 } ?>
 <br><br><br>
 <h5 class="border-bottom border-gray pb-2 mb-0">
-    <?php if (isset($_GET['cat'])) {
+    <?php if (isset($_GET['cat']) ) {
+        if (isset($_GET['page']) == 'forum'){
         echo '<a href="forum">Forums</a>
-                        / <a href="category">Categorie<a> / <span style="color: #709fea ">' .
+                         / <span style="color: #709fea ">' .
             ucwords($category['cat_name']) .
             '</span>';
+        }elseif(isset($_GET['page']) == 'post' ){
+            echo '<a href="forum">Forums</a>/ <a>'.ucwords($_GET['page']).'</a>  / <span style="color: #709fea ">' .ucwords($category['cat_name']) .'</span>';
+        }
     } else {
         echo '        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".1s" style="max-width: 600px;">
         <h5 class="text-primary">Les Forums</h5>
@@ -50,7 +54,7 @@ include 'navbar_body.php'; ?>
 
 <?php
 setlocale(LC_TIME, 'fr_FR');
-$sql = "select topic_id, topic_subject, topic_date, topic_cat, topic_by, userImg, idUsers, uidUsers, cat_name, (
+$sql = "select topic_id, topic_subject, topic_date, topic_cat, topic_by, userImg, idUsers, uidUsers, cat_name, cat_id, (
                 select sum(post_votes)
             from posts
             where post_topic = topic_id
@@ -77,7 +81,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                     <article>
                         <header>
                             <ul class="cat">
-                                <li><a href="#" class="text-primary">' .
+                                <li><a href="forum?cat=' .encoder($row['cat_id']) .'&page=forum" class="text-primary">' .
             $row['cat_name'] .
             '</a></li>
                             </ul>
@@ -86,17 +90,24 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             '"><strong>' .
             ucwords($row['topic_subject']) .
             '</strong></a></h2>
-                            <p class="author-cred ">Creé par :                    <span class="text-warning">' .
+                            <p class="author-cred ">Creé par :                    <span class="text-warning"> <a href="profile?id='.encoder($row['idUsers']).'"> ' .
             ucwords($row['uidUsers']) .
-            '</span> le                   ' .
+            '</a></span> le                   ' .
             date('j F Y', strtotime($row['topic_date'])) .
             ' </p>
                         </header>
-                        <footer>
-                            <a href="posts?topic=' .
-            encoder($row['topic_id']) .
-            '" class="more-link">Lire plus</a>
-                            ';
+                        <footer>';
+                        if (isset($_SESSION['userId'])){
+                            if($_SESSION['userId'] == $row['idUsers']){
+                                echo '<a href="posts?topic=' .encoder($row['topic_id']) .'" class="more-link" style="margin-left:82%">Lire plus</a>
+                                    <a href="../Backend/delete.forum.back.php?id=' .encoder($row['topic_id']) .'&page=user" class="sup-link">Suprimer</a> ';
+                            }else{
+                                echo'<a href="posts?topic=' .encoder($row['topic_id']) .'" class="more-link">Lire plus</a>';
+                            }
+                        }else{
+                            echo'<a href="posts?topic=' .encoder($row['topic_id']) .'" class="more-link">Lire plus</a>';
+                        }
+            echo' ';
         echo '</span>';
         echo '</span>
                                     </div>';
